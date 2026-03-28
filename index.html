@@ -24,7 +24,7 @@ nav a.active {
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.7s ease;
+  transition: all 0.6s ease;
 }
 
 .fade-in.show {
@@ -38,7 +38,7 @@ nav a.active {
 
 <!-- NAV -->
 <nav class="fixed top-0 w-full bg-white shadow z-50">
-  <div class="max-w-6xl mx-auto flex justify-center gap-10 p-4">
+  <div class="max-w-6xl mx-auto flex justify-center gap-8 p-4">
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
     <a href="#expertise">Expertise</a>
@@ -49,25 +49,21 @@ nav a.active {
 <!-- HERO -->
 <section id="summary" class="pt-32 pb-16 max-w-6xl mx-auto px-6 fade-in">
 
-  <div class="grid md:grid-cols-2 gap-12 items-center">
+  <div class="grid md:grid-cols-[220px_1fr] gap-6 items-center">
 
     <!-- IMAGE -->
-    <div class="flex justify-center md:justify-start">
+    <div class="flex md:justify-start justify-center">
       <div class="relative">
+        <div class="absolute -top-3 -left-3 w-full h-full bg-lime-100 rounded-xl"></div>
 
-        <!-- Accent -->
-        <div class="absolute -top-4 -left-4 w-full h-full bg-lime-100 rounded-xl"></div>
-
-        <!-- Image -->
-        <div class="relative w-[220px] h-[260px] rounded-xl overflow-hidden shadow-xl border-4 border-white">
+        <div class="relative w-[200px] h-[240px] rounded-xl overflow-hidden shadow-xl border-4 border-white">
           <img src="janani_profile.jpg" class="w-full h-full object-cover object-top">
         </div>
-
       </div>
     </div>
 
     <!-- CONTENT -->
-    <div>
+    <div class="md:-ml-1">
       <h1 class="text-4xl font-bold mb-2">Janani Balasubramanian</h1>
       <h2 class="text-xl text-gray-600 mb-4">HR Manager | Driving People & Performance</h2>
 
@@ -87,18 +83,18 @@ nav a.active {
       <p class="mb-6">Chennai | beingjanani@gmail.com</p>
 
       <!-- STATS -->
-      <div class="flex gap-6 mb-6">
-        <div class="bg-white p-4 rounded-xl shadow text-center">
-          <h3 class="text-2xl font-bold">15+</h3>
-          <p class="text-sm text-gray-600">Years</p>
+      <div class="flex gap-4 mb-6">
+        <div class="bg-white p-3 rounded-xl shadow text-center">
+          <h3 class="text-xl font-bold">15+</h3>
+          <p class="text-xs text-gray-600">Years</p>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow text-center">
-          <h3 class="text-2xl font-bold">300+</h3>
-          <p class="text-sm text-gray-600">Hires</p>
+        <div class="bg-white p-3 rounded-xl shadow text-center">
+          <h3 class="text-xl font-bold">300+</h3>
+          <p class="text-xs text-gray-600">Hires</p>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow text-center">
-          <h3 class="text-2xl font-bold">4+</h3>
-          <p class="text-sm text-gray-600">Organizations</p>
+        <div class="bg-white p-3 rounded-xl shadow text-center">
+          <h3 class="text-xl font-bold">4+</h3>
+          <p class="text-xs text-gray-600">Orgs</p>
         </div>
       </div>
 
@@ -116,8 +112,8 @@ nav a.active {
     <h2 class="text-2xl font-bold mb-6">Experience</h2>
 
     <div class="mb-6">
-      <h3 class="font-semibold">OLA</h3>
-      <p class="text-gray-600 mb-2">HR Manager</p>
+      <h3 class="font-semibold">OLA Electric</h3>
+      <p class="text-gray-600 mb-2">HR Manager | Jan 2026 – Present</p>
       <ul class="list-disc pl-5 text-gray-600">
         <li>Ensure competitive compensation and benefits including joining bonus and retention incentives</li>
         <li>Develop and update HR policies and ensure compliance</li>
@@ -160,8 +156,9 @@ nav a.active {
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-2xl font-bold mb-6">Education</h2>
 
-    <p class="text-gray-700">MBA - HR</p>
-    <p class="text-gray-700">Bachelor Degree</p>
+    <p class="text-gray-700">PGDHRM - Alagappa University</p>
+    <p class="text-gray-700">MSW - Cauvery College</p>
+    <p class="text-gray-700">BSW - Cauvery College</p>
   </div>
 </section>
 
@@ -192,17 +189,15 @@ window.addEventListener("scroll", () => {
 /* SCROLL ANIMATION */
 const faders = document.querySelectorAll(".fade-in");
 
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add("show");
-    observer.unobserve(entry.target);
+    obs.unobserve(entry.target);
   });
 }, { threshold: 0.15 });
 
-faders.forEach(el => {
-  appearOnScroll.observe(el);
-});
+faders.forEach(el => observer.observe(el));
 </script>
 
 </body>
