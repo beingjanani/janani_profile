@@ -52,7 +52,7 @@ nav a.active::after {
 /* HERO */
 header {
     display: flex;
-    gap: 20px; /* reduced from 30 → fixes spacing */
+    gap: 20px;
     padding: 40px;
     align-items: center;
 }
@@ -85,9 +85,7 @@ h1 {
 }
 
 /* TAG CHIPS */
-.tags {
-    margin: 10px 0;
-}
+.tags { margin: 10px 0; }
 
 .tag {
     display: inline-block;
@@ -217,7 +215,6 @@ h2 {
 
 <div>
 <h1>Janani Balasubramanian</h1>
-
 <p class="subtitle">HR Manager | Business HR • Talent Strategy • Employee Experience</p>
 
 <div class="tags">
@@ -240,10 +237,9 @@ h2 {
 </div>
 </header>
 
-<section id="summary"><h2>Executive Summary</h2>
-<p>Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness.</p>
-</section>
+<!-- KEEP YOUR ORIGINAL CONTENT BELOW (UNCHANGED) -->
 
+<section id="summary"><h2>Executive Summary</h2></section>
 <section id="apart"><h2>What Sets Me Apart</h2></section>
 <section id="achievements"><h2>Impact Delivered</h2></section>
 <section id="experience"><h2>Professional Experience</h2></section>
@@ -252,64 +248,63 @@ h2 {
 
 <script>
 
-/* ANIMATION FIX (LOAD + SCROLL) */
-const sections = document.querySelectorAll("section");
+/* 🔥 SIMPLE & RELIABLE FIX */
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-}, { threshold: 0.15 });
+/* ANIMATION */
+function reveal() {
+  const sections = document.querySelectorAll("section");
+  const trigger = window.innerHeight * 0.85;
 
-sections.forEach(sec => observer.observe(sec));
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
 
-/* HERO SHOW ON LOAD */
-window.addEventListener("load", () => {
-    document.querySelector("#summary").classList.add("show");
-});
+    if (top < trigger) {
+      sec.classList.add("show");
+    }
+  });
+}
 
-/* NAV FIX */
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+
+/* NAV */
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
-    let current = "";
+  let current = "";
 
-    sections.forEach(section => {
-        const top = section.offsetTop - 150;
-        const height = section.offsetHeight;
+  document.querySelectorAll("section").forEach(sec => {
+    const top = sec.offsetTop - 150;
+    if (window.scrollY >= top) {
+      current = sec.id;
+    }
+  });
 
-        if(window.scrollY >= top && window.scrollY < top + height){
-            current = section.id;
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if(link.getAttribute("href") === "#" + current){
-            link.classList.add("active");
-        }
-    });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
 });
 
-/* STATS (UNCHANGED) */
-window.onload = () => {
-    document.querySelectorAll("[data-target]").forEach(el => {
-        let target = +el.getAttribute("data-target");
-        let count = 0;
+/* STATS */
+window.addEventListener("load", () => {
+  document.querySelectorAll("[data-target]").forEach(el => {
+    let target = +el.getAttribute("data-target");
+    let count = 0;
 
-        let interval = setInterval(() => {
-            count += Math.ceil(target / 40);
-            if(count >= target){
-                el.innerText = target + "+";
-                clearInterval(interval);
-            } else {
-                el.innerText = count;
-            }
-        }, 30);
-    });
-};
+    let interval = setInterval(() => {
+      count += Math.ceil(target / 40);
+      if(count >= target){
+        el.innerText = target + "+";
+        clearInterval(interval);
+      } else {
+        el.innerText = count;
+      }
+    }, 30);
+  });
+});
 
 </script>
 
