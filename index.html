@@ -112,20 +112,29 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* SECTIONS */
+/* SECTIONS (🔥 UPGRADED) */
 section {
     background: white;
     margin: 20px;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 14px;
+
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.6s ease;
+
+    transition: all 0.5s ease;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
 section.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.10);
 }
 
 h2 {
@@ -254,7 +263,6 @@ Results-driven HR Manager with 15+ years of experience in workforce strategy, ta
 </ul>
 </section>
 
-<!-- 🔥 ONLY UPGRADED SECTION -->
 <section id="experience">
 <h2>Professional Experience</h2>
 <div class="timeline">
@@ -333,8 +341,6 @@ HR Business Partnering • Talent Acquisition • Workforce Planning • Employe
 </section>
 
 <script>
-
-/* ANIMATION */
 function reveal() {
   document.querySelectorAll("section").forEach(sec => {
     if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
@@ -345,7 +351,6 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
 
-/* NAV */
 window.addEventListener("scroll", () => {
   let current = "";
   document.querySelectorAll("section").forEach(sec => {
@@ -362,7 +367,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-/* STATS */
 window.addEventListener("load", () => {
   document.querySelectorAll("[data-target]").forEach(el => {
     let target = +el.getAttribute("data-target");
@@ -379,7 +383,6 @@ window.addEventListener("load", () => {
     }, 30);
   });
 });
-
 </script>
 
 </body>
