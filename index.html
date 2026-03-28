@@ -9,6 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
 <style>
+
+/* 🔥 UX ADD */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -33,6 +39,12 @@ nav a {
     font-weight: 600;
     color: #333;
     position: relative;
+    transition: 0.3s;
+}
+
+/* 🔥 UX ADD */
+nav a:hover {
+    color: #94c11f;
 }
 
 nav a.active {
@@ -112,7 +124,7 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* SECTIONS (🔥 UPGRADED) */
+/* SECTIONS */
 section {
     background: white;
     margin: 20px;
@@ -341,6 +353,13 @@ HR Business Partnering • Talent Acquisition • Workforce Planning • Employe
 </section>
 
 <script>
+
+/* FORCE TOP LOAD */
+window.onload = function() {
+  window.scrollTo(0, 0);
+};
+
+/* ANIMATION */
 function reveal() {
   document.querySelectorAll("section").forEach(sec => {
     if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
@@ -351,6 +370,7 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
 
+/* NAV ACTIVE */
 window.addEventListener("scroll", () => {
   let current = "";
   document.querySelectorAll("section").forEach(sec => {
@@ -367,6 +387,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
+/* STATS */
 window.addEventListener("load", () => {
   document.querySelectorAll("[data-target]").forEach(el => {
     let target = +el.getAttribute("data-target");
@@ -383,6 +404,7 @@ window.addEventListener("load", () => {
     }, 30);
   });
 });
+
 </script>
 
 </body>
