@@ -51,13 +51,12 @@ nav a.active::after {
     left: 0;
 }
 
-/* HERO CENTERED */
+/* HERO CENTER */
 header {
     text-align: center;
     padding: 50px 20px;
 }
 
-/* IMAGE */
 .photo-frame {
     width: 170px;
     height: 170px;
@@ -72,8 +71,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 18%;
-    transform: scale(0.95);
+    object-position: center 20%;
 }
 
 /* TEXT */
@@ -252,66 +250,17 @@ Open to HR Leadership Roles • Let’s Connect
 
 </header>
 
-<section id="summary">
-<h2>Executive Summary</h2>
-<p>Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness.</p>
-</section>
-
-<section id="apart">
-<h2>What Sets Me Apart</h2>
-<ul>
-<li>Strategic + execution mindset</li>
-<li>Business-aligned HR decisions</li>
-<li>Leadership partnership</li>
-<li>Scalable HR practices</li>
-</ul>
-</section>
-
-<section id="achievements">
-<h2>Impact Delivered</h2>
-<ul>
-<li>300+ hires delivered</li>
-<li>Improved retention</li>
-<li>Leadership workforce planning</li>
-<li>Strong compliance frameworks</li>
-</ul>
-</section>
-
-<section id="experience">
-<h2>Professional Experience</h2>
-<div class="timeline">
-<div class="timeline-item">
-<h3>HR Manager | Ola Electric</h3>
-<p>Jan 2026 – Present</p>
-</div>
-<div class="timeline-item">
-<h3>Deputy Manager | Salcomp</h3>
-<p>Mar 2020 – Dec 2025</p>
-</div>
-<div class="timeline-item">
-<h3>Senior Executive | Nokia</h3>
-<p>Aug 2012 – Feb 2020</p>
-</div>
-<div class="timeline-item">
-<h3>HR Admin | Arrant HR</h3>
-<p>Jul 2008 – Mar 2011</p>
-</div>
-</div>
-</section>
-
-<section id="skills">
-<h2>Core Expertise</h2>
-<p>HRBP • Talent Acquisition • Workforce Planning • Engagement • Compliance • Performance</p>
-</section>
-
-<section id="education">
-<h2>Education</h2>
-<p>PGDHRM • MSW • BSW</p>
-</section>
+<section id="summary"><h2>Executive Summary</h2></section>
+<section id="apart"><h2>What Sets Me Apart</h2></section>
+<section id="achievements"><h2>Impact Delivered</h2></section>
+<section id="experience"><h2>Professional Experience</h2></section>
+<section id="skills"><h2>Core Expertise</h2></section>
+<section id="education"><h2>Education</h2></section>
 
 <script>
 window.onload = () => window.scrollTo(0,0);
 
+/* Scroll Animation */
 window.addEventListener("scroll", () => {
   document.querySelectorAll("section").forEach(sec => {
     if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
@@ -320,9 +269,40 @@ window.addEventListener("scroll", () => {
   });
 });
 
+/* Nav Highlight */
 window.addEventListener("scroll", () => {
   let current = "";
   document.querySelectorAll("section").forEach(sec => {
     if (window.scrollY >= sec.offsetTop - 150) {
       current = sec.id;
-   
+    }
+  });
+
+  document.querySelectorAll("nav a").forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === "#" + current) {
+      a.classList.add("active");
+    }
+  });
+});
+
+/* Counter Animation */
+document.querySelectorAll(".stat-box h3").forEach(counter => {
+  const update = () => {
+    const target = +counter.getAttribute("data-target");
+    const count = +counter.innerText;
+    const inc = target / 100;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count + inc);
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+  update();
+});
+</script>
+
+</body>
+</html>
