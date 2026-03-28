@@ -13,6 +13,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #f5f7fa;
+    scroll-behavior: smooth;
 }
 
 /* NAV */
@@ -54,21 +55,23 @@ header {
     display: flex;
     gap: 30px;
     padding: 40px;
+    align-items: center;
 }
 
 .photo-frame {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 12px;
     overflow: hidden;
     border: 4px solid #94c11f;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .photo-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
 }
 
 h1 {
@@ -76,8 +79,9 @@ h1 {
     font-family: 'Montserrat';
 }
 
+/* HERO TEXT */
 .hero-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     margin-top: 5px;
 }
@@ -88,6 +92,7 @@ h1 {
     max-width: 500px;
 }
 
+/* TAGS */
 .tags {
     margin: 12px 0;
 }
@@ -102,6 +107,7 @@ h1 {
     margin: 5px 5px 0 0;
 }
 
+/* STATS */
 .stats {
     display: flex;
     gap: 20px;
@@ -116,6 +122,7 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
+/* SECTIONS */
 section {
     background: white;
     margin: 20px;
@@ -136,13 +143,15 @@ h2 {
     padding-left: 10px;
 }
 
-.signature {
+/* HIGHLIGHT OLA */
+.highlight {
     background: #f9fbf2;
     border-left: 4px solid #94c11f;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
 }
 
+/* TIMELINE */
 .timeline {
     position: relative;
     padding-left: 30px;
@@ -174,6 +183,7 @@ h2 {
     border-radius: 50%;
 }
 
+/* BUTTON */
 .resume-btn {
     display: inline-block;
     margin-top: 15px;
@@ -197,7 +207,6 @@ h2 {
 
 <nav>
 <a href="#summary">Summary</a>
-<a href="#impact">Impact</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Expertise</a>
 <a href="#education">Education</a>
@@ -212,11 +221,11 @@ h2 {
 <h1>Janani Balasubramanian</h1>
 
 <div class="hero-title">
-Driving People Strategy That Enables Business Growth
+HR Manager | Driving People & Performance
 </div>
 
 <p class="hero-sub">
-HR Manager with 13+ years of experience partnering with business leaders to build high-performing teams and drive organizational outcomes.
+HR professional with 15+ years of experience partnering with business leaders to enable performance, retention, and organizational success.
 </p>
 
 <div class="tags">
@@ -229,7 +238,7 @@ HR Manager with 13+ years of experience partnering with business leaders to buil
 <p>Chennai | beingjanani@gmail.com</p>
 
 <div class="stats">
-<div class="stat-box"><h3 data-target="13">0</h3><p>Years</p></div>
+<div class="stat-box"><h3 data-target="15">0</h3><p>Years</p></div>
 <div class="stat-box"><h3 data-target="300">0</h3><p>Hires</p></div>
 <div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
 </div>
@@ -241,29 +250,15 @@ HR Manager with 13+ years of experience partnering with business leaders to buil
 <section id="summary">
 <h2>Executive Summary</h2>
 <p>
-HR professional experienced in aligning people strategy with business goals, enabling performance, and building sustainable HR practices.
+Experienced HR professional focused on aligning people strategy with business goals, improving employee performance, and driving sustainable HR practices.
 </p>
-</section>
-
-<section id="impact">
-<h2>How I Create Impact</h2>
-<div class="signature">
-<ul>
-<li>Align people strategy with business goals</li>
-<li>Build scalable hiring and workforce plans</li>
-<li>Improve engagement and retention</li>
-<li>Enable managers to perform effectively</li>
-<li>Drive practical HR solutions</li>
-</ul>
-</div>
 </section>
 
 <section id="experience">
 <h2>Professional Experience</h2>
 <div class="timeline">
 
-<!-- ✅ FIXED OLA SECTION -->
-<div class="timeline-item">
+<div class="timeline-item highlight">
 <h3>HR Manager | Ola Electric</h3>
 <p>Jan 2026 – Present</p>
 <ul>
@@ -323,6 +318,8 @@ HR professional experienced in aligning people strategy with business goals, ena
 </section>
 
 <script>
+
+/* SCROLL ANIMATION */
 const sections = document.querySelectorAll("section");
 const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
@@ -333,7 +330,9 @@ entry.target.classList.add("show");
 });
 sections.forEach(sec => observer.observe(sec));
 
+/* NAV ACTIVE */
 const navLinks = document.querySelectorAll("nav a");
+
 window.addEventListener("scroll", () => {
 let current = "";
 sections.forEach(section => {
@@ -350,10 +349,12 @@ link.classList.add("active");
 });
 });
 
+/* STATS LOAD ANIMATION */
 window.onload = () => {
 document.querySelectorAll("[data-target]").forEach(el => {
 let target = +el.getAttribute("data-target");
 let count = 0;
+
 let interval = setInterval(() => {
 count += Math.ceil(target / 40);
 if(count >= target){
@@ -365,6 +366,7 @@ el.innerText = count;
 }, 30);
 });
 };
+
 </script>
 
 </body>
