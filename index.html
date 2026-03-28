@@ -15,21 +15,26 @@ body {
 }
 
 /* NAV ACTIVE */
+nav a {
+  transition: all 0.3s ease;
+}
+
 nav a.active {
   color: #84cc16;
-  font-weight: 600;
+  border-bottom: 2px solid #84cc16;
+  padding-bottom: 4px;
 }
 
 /* ANIMATION */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(25px);
 }
 
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+  transition: all 0.7s ease;
 }
 </style>
 </head>
@@ -63,7 +68,7 @@ nav a.active {
     </div>
 
     <!-- CONTENT -->
-    <div class="md:-ml-1">
+    <div>
       <h1 class="text-4xl font-bold mb-2">Janani Balasubramanian</h1>
       <h2 class="text-xl text-gray-600 mb-4">HR Manager | Driving People & Performance</h2>
 
@@ -72,7 +77,6 @@ nav a.active {
         performance, retention, and organizational success.
       </p>
 
-      <!-- TAGS -->
       <div class="flex flex-wrap gap-2 mb-5">
         <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">HRBP</span>
         <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Talent Strategy</span>
@@ -82,7 +86,6 @@ nav a.active {
 
       <p class="mb-6">Chennai | beingjanani@gmail.com</p>
 
-      <!-- STATS -->
       <div class="flex gap-4 mb-6">
         <div class="bg-white p-3 rounded-xl shadow text-center">
           <h3 class="text-xl font-bold">15+</h3>
@@ -164,7 +167,7 @@ nav a.active {
 
 <!-- SCRIPT -->
 <script>
-/* NAV ACTIVE */
+/* NAV HIGHLIGHT FIX */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -172,32 +175,39 @@ window.addEventListener("scroll", () => {
   let current = "";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) {
+    const top = section.offsetTop - 150;
+    const height = section.offsetHeight;
+
+    if (scrollY >= top && scrollY < top + height) {
       current = section.getAttribute("id");
     }
   });
 
   navLinks.forEach(link => {
     link.classList.remove("active");
-    if (link.getAttribute("href").includes(current)) {
+    if (link.getAttribute("href") === "#" + current) {
       link.classList.add("active");
     }
   });
 });
 
-/* SCROLL ANIMATION */
+/* ANIMATION FIX */
 const faders = document.querySelectorAll(".fade-in");
 
-const observer = new IntersectionObserver((entries, obs) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("show");
-    obs.unobserve(entry.target);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.2 });
 
 faders.forEach(el => observer.observe(el));
+
+/* LOAD FIX (HERO SHOULD SHOW IMMEDIATELY) */
+window.addEventListener("load", () => {
+  document.querySelector("#summary").classList.add("show");
+});
 </script>
 
 </body>
