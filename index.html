@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
 <style>
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -52,22 +51,20 @@ nav a.active::after {
     left: 0;
 }
 
-/* HERO */
+/* HERO CENTERED */
 header {
-    display: flex;
-    gap: 25px;
-    padding: 40px;
-    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
 }
 
-/* 🔥 IMAGE FIXED */
+/* IMAGE */
 .photo-frame {
-    width: 160px;
-    height: 160px;
-    border-radius: 16px;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
     overflow: hidden;
     border: 4px solid #94c11f;
-    flex-shrink: 0;
     background: #eee;
 }
 
@@ -75,11 +72,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    /* 🔥 PERFECT FACE ALIGNMENT */
     object-position: center 18%;
-
-    /* 🔥 BREATHING SPACE */
     transform: scale(0.95);
 }
 
@@ -90,23 +83,15 @@ h1 {
 }
 
 .signature {
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 16px;
     font-weight: 600;
 }
 
-.impact-banner {
-    margin-top: 12px;
-    background: #eef6d5;
-    color: #5c7c12;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: 600;
-    display: inline-block;
-}
-
 /* TAGS */
-.tags { margin: 10px 0; }
+.tags {
+    margin: 15px 0;
+}
 
 .tag {
     display: inline-block;
@@ -115,32 +100,40 @@ h1 {
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
-    margin: 5px 5px 0 0;
+    margin: 5px;
 }
 
 /* BUTTONS */
+.btn-group {
+    margin-top: 20px;
+}
+
 .resume-btn {
     display: inline-block;
-    margin-top: 15px;
     padding: 10px 20px;
+    margin: 5px;
     background: #94c11f;
     color: white;
     border-radius: 8px;
     text-decoration: none;
-    margin-right: 10px;
 }
+
+.btn-dark { background: #333; }
+.btn-blue { background: #0077b5; }
 
 /* STATS */
 .stats {
     display: flex;
+    justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .stat-box {
     background: white;
-    padding: 12px 18px;
-    border-radius: 10px;
+    padding: 15px 22px;
+    border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
@@ -200,9 +193,9 @@ h2 {
 
 /* MOBILE */
 @media(max-width:600px){
-    header {
+    .stats {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 }
 </style>
@@ -220,11 +213,11 @@ h2 {
 </nav>
 
 <header>
+
 <div class="photo-frame">
 <img src="janani_profile.jpg">
 </div>
 
-<div>
 <h1>Janani Balasubramanian</h1>
 
 <p class="signature">
@@ -245,10 +238,10 @@ HR Manager | Business HR • Talent Strategy • Employee Experience
 Open to HR Leadership Roles • Let’s Connect
 </p>
 
-<div>
+<div class="btn-group">
 <a class="resume-btn" href="janani_resume.pdf" target="_blank">Download Resume</a>
-<a class="resume-btn" href="mailto:beingjanani@gmail.com" style="background:#333;">Email Me</a>
-<a class="resume-btn" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank" style="background:#0077b5;">LinkedIn</a>
+<a class="resume-btn btn-dark" href="mailto:beingjanani@gmail.com">Email Me</a>
+<a class="resume-btn btn-blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
 </div>
 
 <div class="stats">
@@ -257,7 +250,6 @@ Open to HR Leadership Roles • Let’s Connect
 <div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
 </div>
 
-</div>
 </header>
 
 <section id="summary">
@@ -333,34 +325,4 @@ window.addEventListener("scroll", () => {
   document.querySelectorAll("section").forEach(sec => {
     if (window.scrollY >= sec.offsetTop - 150) {
       current = sec.id;
-    }
-  });
-
-  document.querySelectorAll("nav a").forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-
-window.addEventListener("load", () => {
-  document.querySelectorAll("[data-target]").forEach(el => {
-    let target = +el.getAttribute("data-target");
-    let count = 0;
-
-    let i = setInterval(() => {
-      count += Math.ceil(target / 40);
-      if(count >= target){
-        el.innerText = target + "+";
-        clearInterval(i);
-      } else {
-        el.innerText = count;
-      }
-    }, 30);
-  });
-});
-</script>
-
-</body>
-</html>
+   
