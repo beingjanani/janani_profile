@@ -8,9 +8,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -22,37 +20,11 @@ nav a.active {
   font-weight: 600;
 }
 
-/* IMAGE FIX */
-.photo-frame {
-  width: 200px;
-  height: 240px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 4px solid #84cc16;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
-/* CARD */
-.card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
 /* ANIMATION */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: all 0.7s ease;
 }
 
 .fade-in.show {
@@ -75,54 +47,67 @@ nav a.active {
 </nav>
 
 <!-- HERO -->
-<section id="summary" class="pt-32 pb-16 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6 fade-in">
+<section id="summary" class="pt-32 pb-16 max-w-6xl mx-auto px-6 fade-in">
 
-  <!-- IMAGE -->
-  <div class="photo-frame">
-    <img src="janani_profile.jpg" alt="Profile">
-  </div>
+  <div class="grid md:grid-cols-2 gap-12 items-center">
 
-  <!-- CONTENT -->
-  <div>
-    <h1 class="text-4xl font-bold mb-2">Janani Balasubramanian</h1>
-    <h2 class="text-xl mb-3 text-gray-600">HR Manager | Driving People & Performance</h2>
+    <!-- IMAGE -->
+    <div class="flex justify-center md:justify-start">
+      <div class="relative">
 
-    <p class="text-gray-600 mb-4 max-w-xl">
-      HR professional with 15+ years of experience partnering with business leaders to enable
-      performance, retention, and organizational success.
-    </p>
+        <!-- Accent -->
+        <div class="absolute -top-4 -left-4 w-full h-full bg-lime-100 rounded-xl"></div>
 
-    <!-- TAGS -->
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">HRBP</span>
-      <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Talent Strategy</span>
-      <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Workforce Planning</span>
-      <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Employee Engagement</span>
-    </div>
+        <!-- Image -->
+        <div class="relative w-[220px] h-[260px] rounded-xl overflow-hidden shadow-xl border-4 border-white">
+          <img src="janani_profile.jpg" class="w-full h-full object-cover object-top">
+        </div>
 
-    <p class="mb-6">Chennai | beingjanani@gmail.com</p>
-
-    <!-- STATS -->
-    <div class="flex gap-6 mb-6">
-      <div class="card">
-        <h3 class="text-2xl font-bold">15+</h3>
-        <p>Years</p>
-      </div>
-      <div class="card">
-        <h3 class="text-2xl font-bold">300+</h3>
-        <p>Hires</p>
-      </div>
-      <div class="card">
-        <h3 class="text-2xl font-bold">4+</h3>
-        <p>Organizations</p>
       </div>
     </div>
 
-    <a href="janani_resume.pdf" class="bg-lime-500 text-white px-6 py-3 rounded-lg shadow hover:bg-lime-600">
-      Download Resume
-    </a>
-  </div>
+    <!-- CONTENT -->
+    <div>
+      <h1 class="text-4xl font-bold mb-2">Janani Balasubramanian</h1>
+      <h2 class="text-xl text-gray-600 mb-4">HR Manager | Driving People & Performance</h2>
 
+      <p class="text-gray-600 mb-4">
+        HR professional with 15+ years of experience partnering with business leaders to enable
+        performance, retention, and organizational success.
+      </p>
+
+      <!-- TAGS -->
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">HRBP</span>
+        <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Talent Strategy</span>
+        <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Workforce Planning</span>
+        <span class="bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Employee Engagement</span>
+      </div>
+
+      <p class="mb-6">Chennai | beingjanani@gmail.com</p>
+
+      <!-- STATS -->
+      <div class="flex gap-6 mb-6">
+        <div class="bg-white p-4 rounded-xl shadow text-center">
+          <h3 class="text-2xl font-bold">15+</h3>
+          <p class="text-sm text-gray-600">Years</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow text-center">
+          <h3 class="text-2xl font-bold">300+</h3>
+          <p class="text-sm text-gray-600">Hires</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow text-center">
+          <h3 class="text-2xl font-bold">4+</h3>
+          <p class="text-sm text-gray-600">Organizations</p>
+        </div>
+      </div>
+
+      <a href="janani_resume.pdf" class="bg-lime-500 text-white px-6 py-3 rounded-lg shadow hover:bg-lime-600">
+        Download Resume
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -132,8 +117,15 @@ nav a.active {
 
     <div class="mb-6">
       <h3 class="font-semibold">OLA</h3>
-      <p class="text-gray-600">HR Manager</p>
-      <p class="text-gray-600 text-sm">[ADD HER EXACT POINTS HERE]</p>
+      <p class="text-gray-600 mb-2">HR Manager</p>
+      <ul class="list-disc pl-5 text-gray-600">
+        <li>Ensure competitive compensation and benefits including joining bonus and retention incentives</li>
+        <li>Develop and update HR policies and ensure compliance</li>
+        <li>Monitor employee performance and productivity</li>
+        <li>Support managers in goal setting and evaluations</li>
+        <li>Plan manpower requirements with department heads based on RTR</li>
+        <li>Drive change management initiatives</li>
+      </ul>
     </div>
 
     <div class="mb-6">
@@ -154,7 +146,7 @@ nav a.active {
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-2xl font-bold mb-6">Expertise</h2>
 
-    <ul class="grid grid-cols-2 gap-4">
+    <ul class="grid grid-cols-2 gap-4 text-gray-700">
       <li>Talent Management</li>
       <li>Employee Engagement</li>
       <li>HR Business Partnering</li>
@@ -168,13 +160,14 @@ nav a.active {
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-2xl font-bold mb-6">Education</h2>
 
-    <p>MBA - HR</p>
-    <p>Bachelor Degree</p>
+    <p class="text-gray-700">MBA - HR</p>
+    <p class="text-gray-700">Bachelor Degree</p>
   </div>
 </section>
 
 <!-- SCRIPT -->
 <script>
+/* NAV ACTIVE */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -182,7 +175,7 @@ window.addEventListener("scroll", () => {
   let current = "";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
+    const sectionTop = section.offsetTop - 120;
     if (scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
@@ -196,28 +189,19 @@ window.addEventListener("scroll", () => {
   });
 });
 
-/* FADE IN ON LOAD + SCROLL */
+/* SCROLL ANIMATION */
 const faders = document.querySelectorAll(".fade-in");
 
-const appearOptions = {
-  threshold: 0.2
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add("show");
     observer.unobserve(entry.target);
   });
-}, appearOptions);
+}, { threshold: 0.15 });
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-
-/* 🔥 LOAD ANIMATION FIX */
-window.addEventListener("load", () => {
-  faders.forEach(el => el.classList.add("show"));
+faders.forEach(el => {
+  appearOnScroll.observe(el);
 });
 </script>
 
