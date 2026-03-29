@@ -50,6 +50,7 @@ header {
     gap: 30px;
     padding: 50px 40px;
     align-items: center;
+    animation: fadeIn 0.8s ease;
 }
 
 .photo-frame {
@@ -69,21 +70,19 @@ header {
 
 h1 { margin: 0; font-family: 'Montserrat'; }
 
-/* 🔥 SIGNATURE LINE */
 .signature {
     font-size: 22px;
     font-weight: 700;
     margin-top: 10px;
 }
 
-/* SUBHOOK */
 .subhook {
     margin-top: 6px;
     color: #666;
     font-weight: 600;
 }
 
-/* 💎 IMPACT BOX */
+/* IMPACT BOX */
 .impact-box {
     margin-top: 18px;
     background: #ffffff;
@@ -91,6 +90,11 @@ h1 { margin: 0; font-family: 'Montserrat'; }
     padding: 15px 18px;
     border-radius: 10px;
     box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+.impact-box:hover {
+    transform: translateY(-3px);
 }
 
 .impact-box p {
@@ -110,6 +114,11 @@ h1 { margin: 0; font-family: 'Montserrat'; }
     color: white;
     border-radius: 8px;
     text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.resume-btn:hover {
+    transform: translateY(-2px);
 }
 
 /* IMPACT STRIP */
@@ -126,6 +135,11 @@ h1 { margin: 0; font-family: 'Montserrat'; }
     border-radius: 10px;
     font-weight: 600;
     box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-3px);
 }
 
 /* SECTIONS */
@@ -134,6 +148,14 @@ section {
     margin: 20px;
     padding: 30px;
     border-radius: 14px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h2 {
@@ -153,6 +175,11 @@ h2 {
     padding: 18px 22px;
     border-radius: 12px;
     box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+.exp-block:hover {
+    transform: translateY(-3px);
 }
 
 .exp-year {
@@ -172,6 +199,11 @@ h2 {
 }
 
 #education { min-height: 250px; }
+
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(-10px);}
+to {opacity:1; transform:translateY(0);}
+}
 
 @media(max-width:700px){
     header { flex-direction: column; text-align: center; }
@@ -207,7 +239,6 @@ HRBP Leader driving hiring strategy, workforce scale & business-aligned people d
 15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
 </div>
 
-<!-- 💎 IMPACT BOX -->
 <div class="impact-box">
 <p>✔ Leads hiring strategy & execution across business units</p>
 <p>✔ Manages HRBP delivery supporting leadership & operations</p>
@@ -306,11 +337,13 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 
 <script>
 
+/* FORCE TOP */
 if ('scrollRestoration' in history) {
 history.scrollRestoration = 'manual';
 }
 window.onload = () => window.scrollTo(0,0);
 
+/* NAV ACTIVE */
 const sections = document.querySelectorAll("section, .impact-strip");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -332,6 +365,15 @@ if (link.getAttribute("href") === "#" + current) {
 link.classList.add("active");
 }
 });
+
+/* REVEAL ANIMATION */
+document.querySelectorAll("section").forEach(sec => {
+const rect = sec.getBoundingClientRect();
+if(rect.top < window.innerHeight - 50){
+sec.classList.add("visible");
+}
+});
+
 });
 
 </script>
