@@ -64,7 +64,6 @@ header {
     border-radius: 20px;
     overflow: hidden;
     border: 4px solid #94c11f;
-    background: #eee;
 }
 
 .photo-frame img {
@@ -75,10 +74,7 @@ header {
 }
 
 /* TEXT */
-h1 {
-    margin: 0;
-    font-family: 'Montserrat';
-}
+h1 { margin: 0; font-family: 'Montserrat'; }
 
 .signature {
     margin-top: 10px;
@@ -87,9 +83,7 @@ h1 {
 }
 
 /* TAGS */
-.tags {
-    margin: 15px 0;
-}
+.tags { margin: 15px 0; }
 
 .tag {
     display: inline-block;
@@ -102,9 +96,7 @@ h1 {
 }
 
 /* BUTTONS */
-.btn-group {
-    margin-top: 20px;
-}
+.btn-group { margin-top: 20px; }
 
 .resume-btn {
     display: inline-block;
@@ -191,10 +183,7 @@ h2 {
 
 /* MOBILE */
 @media(max-width:600px){
-    .stats {
-        flex-direction: column;
-        align-items: center;
-    }
+    .stats { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
@@ -250,17 +239,62 @@ Open to HR Leadership Roles • Let’s Connect
 
 </header>
 
-<section id="summary"><h2>Executive Summary</h2></section>
-<section id="apart"><h2>What Sets Me Apart</h2></section>
-<section id="achievements"><h2>Impact Delivered</h2></section>
-<section id="experience"><h2>Professional Experience</h2></section>
-<section id="skills"><h2>Core Expertise</h2></section>
-<section id="education"><h2>Education</h2></section>
+<section id="summary">
+<h2>Executive Summary</h2>
+<p>Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Strong expertise in partnering with leadership and delivering measurable outcomes.</p>
+</section>
+
+<section id="apart">
+<h2>What Sets Me Apart</h2>
+<ul>
+<li>Strategic + execution mindset</li>
+<li>Business-aligned HR decisions</li>
+<li>Leadership partnership</li>
+<li>Scalable HR practices</li>
+</ul>
+</section>
+
+<section id="achievements">
+<h2>Impact Delivered</h2>
+<ul>
+<li>300+ hires delivered</li>
+<li>Improved retention strategies</li>
+<li>Leadership workforce planning</li>
+<li>Strong compliance frameworks</li>
+</ul>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h3>HR Manager | Ola Electric</h3>
+<p>Jan 2026 – Present</p>
+</div>
+<div class="timeline-item">
+<h3>Deputy Manager | Salcomp</h3>
+<p>Mar 2020 – Dec 2025</p>
+</div>
+<div class="timeline-item">
+<h3>Senior Executive | Nokia</h3>
+<p>Aug 2012 – Feb 2020</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Core Expertise</h2>
+<p>HRBP • Talent Acquisition • Workforce Planning • Engagement • Compliance • Performance</p>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<p>PGDHRM • MSW • BSW</p>
+</section>
 
 <script>
 window.onload = () => window.scrollTo(0,0);
 
-/* Scroll Animation */
 window.addEventListener("scroll", () => {
   document.querySelectorAll("section").forEach(sec => {
     if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
@@ -269,7 +303,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-/* Nav Highlight */
 window.addEventListener("scroll", () => {
   let current = "";
   document.querySelectorAll("section").forEach(sec => {
@@ -284,23 +317,6 @@ window.addEventListener("scroll", () => {
       a.classList.add("active");
     }
   });
-});
-
-/* Counter Animation */
-document.querySelectorAll(".stat-box h3").forEach(counter => {
-  const update = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const inc = target / 100;
-
-    if (count < target) {
-      counter.innerText = Math.ceil(count + inc);
-      setTimeout(update, 20);
-    } else {
-      counter.innerText = target + "+";
-    }
-  };
-  update();
 });
 </script>
 
