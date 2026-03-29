@@ -262,10 +262,12 @@ HRBP • Talent Acquisition • Employee Engagement • Compensation & Benefits 
 
 <script>
 
+/* ALWAYS START TOP */
 window.onload = function() {
   window.scrollTo(0, 0);
 };
 
+/* REVEAL */
 function reveal() {
   document.querySelectorAll("section").forEach(sec => {
     if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
@@ -277,13 +279,21 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
 
+/* NAV ACTIVE FIX (WITH BOTTOM DETECTION) */
 window.addEventListener("scroll", () => {
   let current = "";
-  document.querySelectorAll("section").forEach(sec => {
+  const sections = document.querySelectorAll("section");
+
+  sections.forEach(sec => {
     if (window.scrollY >= sec.offsetTop - 120) {
       current = sec.id;
     }
   });
+
+  // 🔥 FIX: If at bottom → activate last section (Education)
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+    current = sections[sections.length - 1].id;
+  }
 
   document.querySelectorAll("nav a").forEach(link => {
     link.classList.remove("active");
@@ -293,6 +303,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
+/* STATS */
 window.addEventListener("load", () => {
   document.querySelectorAll("[data-target]").forEach(el => {
     let target = +el.getAttribute("data-target");
