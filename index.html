@@ -22,23 +22,19 @@ body {
 nav {
     position: sticky;
     top: 0;
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     display: flex;
     justify-content: center;
     gap: 25px;
-    padding: 12px;
+    padding: 15px;
     border-bottom: 1px solid #eee;
     z-index: 1000;
-    height: 60px;
-    align-items: center;
 }
 
 nav a {
     text-decoration: none;
     font-weight: 600;
     color: #333;
-    padding-bottom: 4px;
 }
 
 nav a.active {
@@ -46,9 +42,9 @@ nav a.active {
     border-bottom: 2px solid #94c11f;
 }
 
-/* FIX SCROLL OFFSET */
+/* OFFSET FIX */
 section {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 90px;
 }
 
 /* HERO */
@@ -139,16 +135,31 @@ h2 {
 
 .exp-block {
     margin-bottom: 30px;
-    padding: 18px;
+    padding: 18px 22px;
     border-radius: 12px;
     box-shadow: 0 6px 14px rgba(0,0,0,0.06);
 }
 
-.exp-year { font-size: 12px; color: #888; }
-.exp-role { font-weight: 700; }
+.exp-year {
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+}
 
-/* FORCE LAST SECTION HEIGHT */
-#education { min-height: 300px; }
+.exp-role {
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.exp-block ul {
+    margin-top: 10px;
+    padding-left: 18px;
+}
+
+/* FIX EDUCATION SCROLL */
+#education {
+    min-height: 250px;
+}
 
 /* MOBILE */
 @media(max-width:700px){
@@ -201,7 +212,9 @@ HR Business Partner enabling large-scale workforce growth, high-impact hiring & 
 
 <section id="summary">
 <h2>Summary</h2>
-<p>HR leader with 15+ years of experience driving hiring scale and HR transformation.</p>
+<p>
+HR leader with 15+ years of experience partnering with business leaders to drive hiring scale, employee engagement, and HR transformation initiatives.
+</p>
 </section>
 
 <section id="experience">
@@ -211,26 +224,46 @@ HR Business Partner enabling large-scale workforce growth, high-impact hiring & 
 
 <div class="exp-block">
 <div class="exp-year">Jan 2026 – Present</div>
-<h3>Ola Electric</h3>
+<h3>Ola Electric Technologies Pvt Ltd</h3>
 <div class="exp-role">Manager HR (HRBP)</div>
+<ul>
+<li>Driving HR strategy aligned to rapid business expansion</li>
+<li>Leading hiring for leadership roles</li>
+<li>Enhancing engagement and retention</li>
+</ul>
 </div>
 
 <div class="exp-block">
 <div class="exp-year">Mar 2020 – Dec 2025</div>
-<h3>Salcomp</h3>
+<h3>Salcomp Technologies</h3>
 <div class="exp-role">Deputy Manager (HRBP)</div>
+<ul>
+<li>Partnered with leadership on workforce planning</li>
+<li>Managed high-volume hiring delivery</li>
+<li>Improved HR processes and alignment</li>
+</ul>
 </div>
 
 <div class="exp-block">
 <div class="exp-year">Aug 2012 – Feb 2020</div>
 <h3>Nokia</h3>
 <div class="exp-role">HR Senior Executive</div>
+<ul>
+<li>Handled employee engagement and relations</li>
+<li>Supported performance and HR analytics</li>
+<li>Worked in global HR environment</li>
+</ul>
 </div>
 
 <div class="exp-block">
 <div class="exp-year">Jul 2008 – Mar 2011</div>
 <h3>Arrant HR</h3>
 <div class="exp-role">HR Senior Executive</div>
+<ul>
+<li>Managed recruitment lifecycle</li>
+<li>Handled payroll and operations</li>
+<li>Built HR processes</li>
+</ul>
 </div>
 
 </div>
@@ -239,22 +272,21 @@ HR Business Partner enabling large-scale workforce growth, high-impact hiring & 
 
 <section id="skills">
 <h2>Skills</h2>
-<p>HRBP • Talent Acquisition • Engagement • Operations</p>
+<p>
+HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
+</p>
 </section>
 
 <section id="education">
 <h2>Education</h2>
-<p>PGDHRM • MSW • BSW</p>
+<p><b>PGDHRM</b> – 2011 | Alagappa University</p>
+<p><b>MSW</b> – 2008 | Cauvery College</p>
+<p><b>BSW</b> – 2006 | Cauvery College</p>
 </section>
 
 <script>
 
-/* START TOP */
-window.onload = function() {
-    window.scrollTo(0,0);
-};
-
-/* PERFECT NAV LOGIC */
+/* NAV FIX */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -262,13 +294,12 @@ window.addEventListener("scroll", () => {
     let current = "";
 
     sections.forEach(section => {
-        const top = section.offsetTop - 100;
-        if (window.scrollY >= top) {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) {
             current = section.getAttribute("id");
         }
     });
 
-    /* FORCE last section highlight */
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
         current = "education";
     }
