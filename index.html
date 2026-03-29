@@ -6,24 +6,25 @@
 
 <title>Janani Balasubramanian | HR Manager</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
 
 <style>
 
-/* UX */
+/* GLOBAL */
 html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background: #f5f7fa;
+    background: linear-gradient(to bottom, #f5f7fa, #eef6d5);
 }
 
 /* NAV */
 nav {
     position: sticky;
     top: 0;
-    background: white;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7);
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -42,7 +43,9 @@ nav a {
 
 nav a:hover { color: #94c11f; }
 
-nav a.active { color: #94c11f; }
+nav a.active {
+    color: #94c11f;
+}
 
 nav a.active::after {
     content: "";
@@ -57,36 +60,43 @@ nav a.active::after {
 /* HERO */
 header {
     display: flex;
-    gap: 20px;
-    padding: 40px;
+    gap: 30px;
+    padding: 50px 40px;
     align-items: center;
 }
 
 .photo-frame {
-    width: 150px;
-    height: 150px;
-    border-radius: 12px;
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
     overflow: hidden;
     border: 4px solid #94c11f;
-    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .photo-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
 }
 
 h1 {
     margin: 0;
     font-family: 'Montserrat';
+    font-size: 32px;
 }
 
 .subtitle {
     color: #94c11f;
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+.hook {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin-top: 10px;
 }
 
 /* TAGS */
@@ -102,56 +112,54 @@ h1 {
     margin: 5px 5px 0 0;
 }
 
-/* CTA BLOCK */
+/* CTA */
 .cta-block {
     margin: 0 40px 20px 40px;
+}
+
+.resume-btn {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #94c11f;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 /* STATS */
 .stats {
     display: flex;
     gap: 20px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .stat-box {
     background: white;
-    padding: 12px 18px;
-    border-radius: 10px;
+    padding: 15px 20px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-/* BUTTON */
-.resume-btn {
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #94c11f;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.resume-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 /* SECTIONS */
 section {
     background: white;
-    margin: 20px;
-    padding: 30px;
-    border-radius: 14px;
-
+    margin: 25px;
+    padding: 35px;
+    border-radius: 16px;
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.5s ease;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
 section.show {
@@ -160,13 +168,14 @@ section.show {
 }
 
 section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.10);
+    transform: translateY(-6px);
 }
 
+/* HEADINGS */
 h2 {
-    border-left: 4px solid #94c11f;
-    padding-left: 10px;
+    border-left: 5px solid #94c11f;
+    padding-left: 12px;
+    margin-bottom: 15px;
 }
 
 /* TIMELINE */
@@ -219,37 +228,38 @@ h2 {
 <a href="#achievements">Impact</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Expertise</a>
+<a href="#whyhire">Why Hire Me</a>
 <a href="#education">Education</a>
 </nav>
 
 <header>
+
 <div class="photo-frame">
 <img src="janani_profile.jpg">
 </div>
 
 <div>
+
 <h1>Janani Balasubramanian</h1>
 
-<p class="subtitle">HR Manager | Business HR • Talent Strategy • Employee Experience</p>
+<p class="subtitle">HR Manager | Driving Talent Strategy & Business Impact</p>
+
+<p class="hook">
+Transforming people strategies into measurable business outcomes • 300+ hires • 15+ years impact
+</p>
 
 <div class="tags">
 <span class="tag">HR Business Partnering</span>
-<span class="tag">Talent Acquisition</span>
+<span class="tag">Talent Strategy</span>
 <span class="tag">Workforce Planning</span>
-<span class="tag">Employee Engagement</span>
-<span class="tag">HR Compliance</span>
+<span class="tag">Employee Experience</span>
 </div>
 
 <p>Chennai | beingjanani@gmail.com</p>
 
-<p style="margin-top:10px; font-weight:600; color:#333;">
-Open to HR Leadership Roles • Let’s Connect
-</p>
-
 </div>
 </header>
 
-<!-- ✅ MOVED HERE -->
 <div class="cta-block">
 
 <a class="resume-btn" href="janani_resume.pdf" target="_blank">Download Resume</a>
@@ -270,32 +280,30 @@ LinkedIn
 
 </div>
 
-<!-- ALL YOUR ORIGINAL SECTIONS BELOW (UNCHANGED) -->
-
 <section id="summary">
 <h2>Executive Summary</h2>
 <p>
-Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Strong expertise in partnering with leadership, improving engagement, and delivering measurable business outcomes.
+HR leader with 15+ years of experience partnering with business leaders to drive workforce strategy, talent acquisition, and employee engagement. Known for delivering scalable HR solutions that improve retention, productivity, and organizational effectiveness.
 </p>
 </section>
 
 <section id="apart">
 <h2>What Sets Me Apart</h2>
 <ul>
-<li>Blend of strategic HR thinking and strong execution</li>
-<li>Ability to align people goals with business outcomes</li>
-<li>Trusted partner for leadership decision-making</li>
-<li>Focused on scalable and sustainable HR practices</li>
+<li>Strategic HR mindset with execution excellence</li>
+<li>Strong alignment between people strategy and business goals</li>
+<li>Trusted advisor to leadership teams</li>
+<li>Focus on scalable, sustainable HR practices</li>
 </ul>
 </section>
 
 <section id="achievements">
 <h2>Impact Delivered</h2>
 <ul>
-<li><b>300+ hires</b> delivered across functions</li>
-<li><b>Improved retention</b> through engagement strategies</li>
-<li><b>Partnered with leadership</b> on workforce planning</li>
-<li><b>Strengthened HR compliance</b> frameworks</li>
+<li><b>Scaled Hiring:</b> Delivered <b>300+ hires</b> by optimizing hiring strategy</li>
+<li><b>Improved Retention:</b> Strengthened engagement and reduced attrition</li>
+<li><b>Business Alignment:</b> Partnered with leaders for workforce planning</li>
+<li><b>HR Transformation:</b> Standardized HR policies and compliance</li>
 </ul>
 </section>
 
@@ -306,55 +314,28 @@ Results-driven HR Manager with 15+ years of experience in workforce strategy, ta
 <div class="timeline-item">
 <h3>HR Manager | Ola Electric</h3>
 <p>Jan 2026 – Present</p>
-
-<p><i>Driving HR strategy, workforce planning, and employee performance alignment for business growth.</i></p>
-
-<p><b>Compensation & Benefits</b></p>
 <ul>
-<li>Ensure competitive compensation and benefits including joining bonus and retention incentives</li>
-<li>Develop and update HR policies and ensure compliance</li>
+<li><b>Led workforce planning</b> aligned with business growth</li>
+<li><b>Partnered with leadership</b> on performance management</li>
+<li><b>Improved hiring effectiveness</b> through structured processes</li>
+<li><b>Ensured HR compliance</b> and policy implementation</li>
+<li><b>Drove change initiatives</b> for transformation</li>
 </ul>
-
-<p><b>Performance & Workforce</b></p>
-<ul>
-<li>Monitor employee performance and productivity</li>
-<li>Support managers in goal setting and evaluations</li>
-</ul>
-
-<p><b>Planning & Change Management</b></p>
-<ul>
-<li>Plan manpower requirements with department heads based on RTR</li>
-<li>Drive change management initiatives</li>
-</ul>
-
 </div>
 
 <div class="timeline-item">
 <h3>Deputy Manager | Salcomp</h3>
 <p>Mar 2020 – Dec 2025</p>
-<ul>
-<li>End-to-end recruitment lifecycle</li>
-<li>Global hiring</li>
-<li>Employee engagement initiatives</li>
-</ul>
 </div>
 
 <div class="timeline-item">
 <h3>Senior Executive | Nokia</h3>
 <p>Aug 2012 – Feb 2020</p>
-<ul>
-<li>HR operations and employee relations</li>
-<li>Training and engagement programs</li>
-</ul>
 </div>
 
 <div class="timeline-item">
 <h3>HR Admin | Arrant HR</h3>
 <p>Jul 2008 – Mar 2011</p>
-<ul>
-<li>Recruitment and onboarding</li>
-<li>Payroll and HR support</li>
-</ul>
 </div>
 
 </div>
@@ -367,17 +348,32 @@ HR Business Partnering • Talent Acquisition • Workforce Planning • Employe
 </p>
 </section>
 
+<section id="whyhire">
+<h2>Why Hire Me</h2>
+<ul>
+<li>I align people strategy with business growth</li>
+<li>Strong balance of strategic thinking and execution</li>
+<li>Build scalable HR systems</li>
+<li>Trusted leadership partner</li>
+</ul>
+</section>
+
 <section id="education">
 <h2>Education</h2>
-<div class="timeline">
-<div class="timeline-item"><h3>PGDHRM</h3><p>Alagappa University</p></div>
-<div class="timeline-item"><h3>MSW</h3><p>Cauvery College</p></div>
-<div class="timeline-item"><h3>BSW</h3><p>Cauvery College</p></div>
-</div>
+<p>PGDHRM • MSW • BSW</p>
+</section>
+
+<section>
+<h2>Let’s Connect</h2>
+<p>
+If you're looking for an HR leader who can drive business impact through people strategy,
+I’d love to connect and contribute to your organization’s growth.
+</p>
+
+<a class="resume-btn" href="mailto:beingjanani@gmail.com">Start a Conversation</a>
 </section>
 
 <script>
-window.onload = function() { window.scrollTo(0, 0); };
 
 function reveal() {
   document.querySelectorAll("section").forEach(sec => {
@@ -386,6 +382,7 @@ function reveal() {
     }
   });
 }
+
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
 
@@ -421,6 +418,7 @@ window.addEventListener("load", () => {
     }, 30);
   });
 });
+
 </script>
 
 </body>
