@@ -42,10 +42,7 @@ nav a.active {
     border-bottom: 2px solid #94c11f;
 }
 
-/* OFFSET */
-section {
-    scroll-margin-top: 90px;
-}
+section { scroll-margin-top: 90px; }
 
 /* HERO */
 header {
@@ -72,14 +69,32 @@ header {
 
 h1 { margin: 0; font-family: 'Montserrat'; }
 
-.headline {
+/* 🔥 SIGNATURE LINE */
+.signature {
     font-size: 22px;
     font-weight: 700;
+    margin-top: 10px;
 }
 
+/* SUBHOOK */
 .subhook {
-    margin-top: 8px;
+    margin-top: 6px;
     color: #666;
+    font-weight: 600;
+}
+
+/* 💎 IMPACT BOX */
+.impact-box {
+    margin-top: 18px;
+    background: #ffffff;
+    border-left: 4px solid #94c11f;
+    padding: 15px 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.impact-box p {
+    margin: 6px 0;
     font-weight: 600;
 }
 
@@ -184,12 +199,19 @@ h2 {
 <div>
 <h1>Janani Balasubramanian</h1>
 
-<div class="headline">
-HR Business Partner enabling workforce growth, strategic hiring & business transformation
+<div class="signature">
+HRBP Leader driving hiring strategy, workforce scale & business-aligned people decisions
 </div>
 
 <div class="subhook">
 15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+</div>
+
+<!-- 💎 IMPACT BOX -->
+<div class="impact-box">
+<p>✔ Leads hiring strategy & execution across business units</p>
+<p>✔ Manages HRBP delivery supporting leadership & operations</p>
+<p>✔ Enables workforce scale in high-growth manufacturing environments</p>
 </div>
 
 <p>Chennai | beingjanani@gmail.com</p>
@@ -204,15 +226,14 @@ HR Business Partner enabling workforce growth, strategic hiring & business trans
 <section id="summary">
 <h2>Summary</h2>
 <p>
-HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, talent acquisition, and employee engagement across manufacturing and corporate environments.
+HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
 </p>
 </section>
 
-<!-- IMPACT -->
 <div class="impact-strip" id="impact">
 <div class="impact-card">Business HR Partnering</div>
-<div class="impact-card">Workforce Planning & Hiring</div>
-<div class="impact-card">Employee Engagement & Retention</div>
+<div class="impact-card">Hiring Strategy & Execution</div>
+<div class="impact-card">Employee Engagement</div>
 <div class="impact-card">HR Operations Excellence</div>
 </div>
 
@@ -226,9 +247,9 @@ HR professional with 15+ years of experience partnering with business leaders to
 <h3>Ola Electric</h3>
 <div class="exp-role">Manager HR (HRBP)</div>
 <ul>
-<li>Partnering with business leaders to align HR strategy with organizational goals and growth plans</li>
-<li>Driving workforce planning and hiring initiatives for critical roles</li>
-<li>Strengthening employee engagement and retention through targeted HR interventions</li>
+<li>Partnering with leadership to align HR strategy with business growth</li>
+<li>Driving hiring and workforce planning for key roles</li>
+<li>Leading engagement and retention initiatives</li>
 </ul>
 </div>
 
@@ -237,9 +258,9 @@ HR professional with 15+ years of experience partnering with business leaders to
 <h3>Salcomp</h3>
 <div class="exp-role">Deputy Manager (HRBP)</div>
 <ul>
-<li>Collaborated with leadership to support workforce planning and business expansion initiatives</li>
-<li>Led end-to-end hiring delivery across manufacturing and corporate roles</li>
-<li>Enhanced HR processes and ensured alignment with business objectives</li>
+<li>Collaborated with leadership on workforce and expansion planning</li>
+<li>Led hiring delivery across multiple functions</li>
+<li>Improved HR alignment with business needs</li>
 </ul>
 </div>
 
@@ -248,9 +269,9 @@ HR professional with 15+ years of experience partnering with business leaders to
 <h3>Nokia</h3>
 <div class="exp-role">HR Senior Executive</div>
 <ul>
-<li>Managed employee engagement and relations in a dynamic corporate environment</li>
-<li>Supported performance management and HR operations</li>
-<li>Contributed to HR initiatives in a global work setup</li>
+<li>Handled employee engagement and HR operations</li>
+<li>Supported performance management processes</li>
+<li>Worked within global HR frameworks</li>
 </ul>
 </div>
 
@@ -259,9 +280,9 @@ HR professional with 15+ years of experience partnering with business leaders to
 <h3>Arrant HR</h3>
 <div class="exp-role">HR Senior Executive</div>
 <ul>
-<li>Handled end-to-end recruitment lifecycle for multiple clients</li>
-<li>Managed payroll and HR operations activities</li>
-<li>Supported HR process implementation and coordination</li>
+<li>Managed recruitment lifecycle and HR operations</li>
+<li>Handled payroll and coordination activities</li>
+<li>Supported HR process implementation</li>
 </ul>
 </div>
 
@@ -272,7 +293,7 @@ HR professional with 15+ years of experience partnering with business leaders to
 <section id="skills">
 <h2>Skills</h2>
 <p>
-HR Business Partnering • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
+HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
 </p>
 </section>
 
@@ -285,13 +306,11 @@ HR Business Partnering • Talent Acquisition • Workforce Planning • Employe
 
 <script>
 
-/* FORCE TOP */
 if ('scrollRestoration' in history) {
 history.scrollRestoration = 'manual';
 }
 window.onload = () => window.scrollTo(0,0);
 
-/* NAV ACTIVE */
 const sections = document.querySelectorAll("section, .impact-strip");
 const navLinks = document.querySelectorAll("nav a");
 
