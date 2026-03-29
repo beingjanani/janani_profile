@@ -9,13 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
 <style>
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #f5f7fa;
 }
 
-/* NAV */
+/* NAV - FIXED */
 nav {
     position: sticky;
     top: 0;
@@ -25,24 +27,28 @@ nav {
     gap: 30px;
     padding: 15px;
     border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
 }
 
 /* HERO */
-.hero {
+header {
+    display: flex;
+    gap: 40px;
     padding: 40px;
 }
 
-/* TOP ROW */
-.top-row {
-    display: flex;
-    gap: 40px;
-}
-
 /* LEFT */
-.left {
-    width: 260px;
+.left-col {
+    width: 300px;
 }
 
+/* IMAGE FIX (NO CUT) */
 .photo-frame {
     width: 170px;
     height: 170px;
@@ -55,6 +61,7 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top; /* FIXED */
 }
 
 /* TAGS */
@@ -63,32 +70,30 @@ nav {
     background: #eef6d5;
     padding: 6px 12px;
     border-radius: 20px;
-    margin: 6px 6px 0 0;
+    margin: 5px;
     font-size: 12px;
 }
 
 /* RIGHT */
-.right {
+.right-col {
     flex: 1;
 }
 
-h1 { margin: 0; font-family: 'Montserrat'; }
-
-/* FULL WIDTH ROW */
-.full-row {
-    margin-top: 25px;
+/* FULL WIDTH BLOCK */
+.full-width-block {
+    padding: 0 40px 20px 40px;
 }
 
 /* BUTTONS */
 .btn-group {
     display: flex;
-    gap: 15px;
+    gap: 12px;
 }
 
-.btn {
+.resume-btn {
     flex: 1;
     text-align: center;
-    padding: 15px;
+    padding: 14px;
     border-radius: 10px;
     color: white;
     text-decoration: none;
@@ -99,19 +104,20 @@ h1 { margin: 0; font-family: 'Montserrat'; }
 .dark { background: #333; }
 .blue { background: #0077b5; }
 
-/* STATS */
+/* STATS - REDUCED SIZE */
 .stats {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     margin-top: 15px;
 }
 
-.stat {
+.stat-box {
     flex: 1;
     background: white;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 10px; /* reduced */
+    border-radius: 10px;
     text-align: center;
+    font-size: 14px;
 }
 
 /* SECTIONS */
@@ -121,6 +127,12 @@ section {
     padding: 30px;
     border-radius: 14px;
 }
+
+/* MOBILE */
+@media(max-width:768px){
+    header { flex-direction: column; }
+    .left-col { width: 100%; }
+}
 </style>
 </head>
 
@@ -128,31 +140,30 @@ section {
 
 <nav>
 <a href="#summary">Summary</a>
+<a href="#apart">Differentiator</a>
+<a href="#achievements">Impact</a>
 <a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
+<a href="#skills">Expertise</a>
 <a href="#education">Education</a>
 </nav>
 
-<div class="hero">
+<header>
 
-<!-- TOP -->
-<div class="top-row">
-
-<div class="left">
+<div class="left-col">
 <div class="photo-frame">
 <img src="janani_profile.jpg">
 </div>
 
 <div style="margin-top:15px;">
-<span class="tag">HRBP</span>
+<span class="tag">HR Business Partnering</span>
 <span class="tag">Talent Acquisition</span>
 <span class="tag">Workforce Planning</span>
-<span class="tag">Engagement</span>
+<span class="tag">Employee Engagement</span>
 </div>
 </div>
 
-<div class="right">
-<h1>Janani Balasubramanian</h1>
+<div class="right-col">
+<h1 style="margin:0;">Janani Balasubramanian</h1>
 
 <p><strong>HR Manager | Business HR • Talent Strategy • Employee Experience</strong></p>
 
@@ -165,30 +176,30 @@ Results-driven HR Manager with 15+ years of experience in workforce strategy, ta
 <p><strong>Open to HR Leadership Roles • Let’s Connect</strong></p>
 </div>
 
-</div>
+</header>
 
-<!-- FULL WIDTH BUTTONS -->
-<div class="full-row">
+<!-- FULL WIDTH CTA (SAFE ADDITION) -->
+<div class="full-width-block">
 
 <div class="btn-group">
-<a class="btn green" href="janani_resume.pdf" target="_blank">Resume</a>
-<a class="btn dark" href="mailto:beingjanani@gmail.com">Email</a>
-<a class="btn blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
+<a class="resume-btn green" href="janani_resume.pdf" target="_blank">Resume</a>
+<a class="resume-btn dark" href="mailto:beingjanani@gmail.com">Email</a>
+<a class="resume-btn blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
 </div>
 
 <div class="stats">
-<div class="stat"><h3>15+</h3><p>Years</p></div>
-<div class="stat"><h3>300+</h3><p>Hires</p></div>
-<div class="stat"><h3>4+</h3><p>Organizations</p></div>
+<div class="stat-box"><strong>15+</strong><br>Years</div>
+<div class="stat-box"><strong>300+</strong><br>Hires</div>
+<div class="stat-box"><strong>4+</strong><br>Organizations</div>
 </div>
 
 </div>
 
-</div>
-
-<section id="summary"><h2>Summary</h2></section>
-<section id="experience"><h2>Experience</h2></section>
-<section id="skills"><h2>Skills</h2></section>
+<section id="summary"><h2>Executive Summary</h2></section>
+<section id="apart"><h2>What Sets Me Apart</h2></section>
+<section id="achievements"><h2>Impact Delivered</h2></section>
+<section id="experience"><h2>Professional Experience</h2></section>
+<section id="skills"><h2>Core Expertise</h2></section>
 <section id="education"><h2>Education</h2></section>
 
 </body>
