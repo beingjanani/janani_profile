@@ -17,7 +17,7 @@ body {
     background: #f5f7fa;
 }
 
-/* NAV - FIXED */
+/* NAV */
 nav {
     position: sticky;
     top: 0;
@@ -36,6 +36,10 @@ nav a {
     color: #333;
 }
 
+nav a.active {
+    color: #94c11f;
+}
+
 /* HERO */
 header {
     display: flex;
@@ -44,11 +48,8 @@ header {
 }
 
 /* LEFT */
-.left-col {
-    width: 300px;
-}
+.left-col { width: 300px; }
 
-/* IMAGE FIX (NO CUT) */
 .photo-frame {
     width: 170px;
     height: 170px;
@@ -61,7 +62,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top; /* FIXED */
+    object-position: center 15%;
 }
 
 /* TAGS */
@@ -75,27 +76,24 @@ header {
 }
 
 /* RIGHT */
-.right-col {
-    flex: 1;
-}
+.right-col { flex: 1; }
 
-/* FULL WIDTH BLOCK */
-.full-width-block {
+/* FULL WIDTH CTA */
+.cta-block {
     padding: 0 40px 20px 40px;
 }
 
-/* BUTTONS */
 .btn-group {
     display: flex;
     gap: 12px;
 }
 
-.resume-btn {
+.btn {
     flex: 1;
-    text-align: center;
     padding: 14px;
-    border-radius: 10px;
+    text-align: center;
     color: white;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
 }
@@ -104,7 +102,6 @@ header {
 .dark { background: #333; }
 .blue { background: #0077b5; }
 
-/* STATS - REDUCED SIZE */
 .stats {
     display: flex;
     gap: 12px;
@@ -114,10 +111,9 @@ header {
 .stat-box {
     flex: 1;
     background: white;
-    padding: 10px; /* reduced */
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
-    font-size: 14px;
 }
 
 /* SECTIONS */
@@ -126,6 +122,38 @@ section {
     margin: 20px;
     padding: 30px;
     border-radius: 14px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.5s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    border-left: 4px solid #94c11f;
+    padding-left: 10px;
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    width: 3px;
+    height: 100%;
+    background: #94c11f44;
+}
+
+.timeline-item {
+    margin-bottom: 25px;
 }
 
 /* MOBILE */
@@ -163,12 +191,12 @@ section {
 </div>
 
 <div class="right-col">
-<h1 style="margin:0;">Janani Balasubramanian</h1>
+<h1>Janani Balasubramanian</h1>
 
 <p><strong>HR Manager | Business HR • Talent Strategy • Employee Experience</strong></p>
 
 <p>
-Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness.
+Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Strong expertise in partnering with leadership and delivering measurable outcomes.
 </p>
 
 <p>Chennai | beingjanani@gmail.com</p>
@@ -178,29 +206,99 @@ Results-driven HR Manager with 15+ years of experience in workforce strategy, ta
 
 </header>
 
-<!-- FULL WIDTH CTA (SAFE ADDITION) -->
-<div class="full-width-block">
+<!-- FULL WIDTH CTA -->
+<div class="cta-block">
 
 <div class="btn-group">
-<a class="resume-btn green" href="janani_resume.pdf" target="_blank">Resume</a>
-<a class="resume-btn dark" href="mailto:beingjanani@gmail.com">Email</a>
-<a class="resume-btn blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
+<a class="btn green" href="janani_resume.pdf" target="_blank">Resume</a>
+<a class="btn dark" href="mailto:beingjanani@gmail.com">Email</a>
+<a class="btn blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
 </div>
 
 <div class="stats">
-<div class="stat-box"><strong>15+</strong><br>Years</div>
-<div class="stat-box"><strong>300+</strong><br>Hires</div>
-<div class="stat-box"><strong>4+</strong><br>Organizations</div>
+<div class="stat-box"><h3 data-target="15">0</h3><p>Years</p></div>
+<div class="stat-box"><h3 data-target="300">0</h3><p>Hires</p></div>
+<div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
 </div>
 
 </div>
 
-<section id="summary"><h2>Executive Summary</h2></section>
-<section id="apart"><h2>What Sets Me Apart</h2></section>
-<section id="achievements"><h2>Impact Delivered</h2></section>
-<section id="experience"><h2>Professional Experience</h2></section>
-<section id="skills"><h2>Core Expertise</h2></section>
-<section id="education"><h2>Education</h2></section>
+<!-- FULL CONTENT RESTORED -->
+<section id="summary">
+<h2>Executive Summary</h2>
+<p>Results-driven HR Manager with 15+ years experience in HRBP, talent strategy, and workforce planning.</p>
+</section>
+
+<section id="apart">
+<h2>What Sets Me Apart</h2>
+<ul>
+<li>Strategic HR mindset</li>
+<li>Strong business alignment</li>
+<li>Leadership partnership</li>
+<li>Execution excellence</li>
+</ul>
+</section>
+
+<section id="achievements">
+<h2>Impact Delivered</h2>
+<ul>
+<li>300+ hires across domains</li>
+<li>Improved retention & engagement</li>
+<li>Leadership workforce strategy</li>
+</ul>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h3>HR Manager | Ola Electric</h3>
+<p>Jan 2026 – Present</p>
+</div>
+<div class="timeline-item">
+<h3>Deputy Manager | Salcomp</h3>
+<p>Mar 2020 – Dec 2025</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Core Expertise</h2>
+<p>HRBP • Talent Acquisition • Workforce Planning • Engagement • Compliance</p>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<p>PGDHRM | MSW | BSW</p>
+</section>
+
+<script>
+/* Scroll reveal */
+window.addEventListener("scroll", () => {
+  document.querySelectorAll("section").forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
+      sec.classList.add("show");
+    }
+  });
+});
+
+/* Stats */
+window.addEventListener("load", () => {
+  document.querySelectorAll("[data-target]").forEach(el => {
+    let target = +el.getAttribute("data-target");
+    let count = 0;
+    let i = setInterval(() => {
+      count += Math.ceil(target / 40);
+      if (count >= target) {
+        el.innerText = target + "+";
+        clearInterval(i);
+      } else {
+        el.innerText = count;
+      }
+    }, 30);
+  });
+});
+</script>
 
 </body>
 </html>
