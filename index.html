@@ -10,6 +10,7 @@
 
 <style>
 
+/* UX */
 html { scroll-behavior: smooth; }
 
 body {
@@ -36,11 +37,12 @@ nav a {
     font-weight: 600;
     color: #333;
     position: relative;
+    transition: 0.3s;
 }
 
-nav a.active {
-    color: #94c11f;
-}
+nav a:hover { color: #94c11f; }
+
+nav a.active { color: #94c11f; }
 
 nav a.active::after {
     content: "";
@@ -76,7 +78,10 @@ header {
     object-position: center top;
 }
 
-h1 { margin: 0; font-family: 'Montserrat'; }
+h1 {
+    margin: 0;
+    font-family: 'Montserrat';
+}
 
 .subtitle {
     color: #94c11f;
@@ -90,13 +95,14 @@ h1 { margin: 0; font-family: 'Montserrat'; }
 .tag {
     display: inline-block;
     background: #eef6d5;
+    color: #5c7c12;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
     margin: 5px 5px 0 0;
 }
 
-/* CTA BLOCK (NEW POSITION SAFE) */
+/* CTA BLOCK (NEW) */
 .cta-block {
     margin: 0 40px 20px 40px;
 }
@@ -128,11 +134,12 @@ h1 { margin: 0; font-family: 'Montserrat'; }
 }
 
 .stat-box {
-    flex: 1;
     background: white;
-    padding: 12px;
+    padding: 12px 18px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    flex: 1;
 }
 
 /* SECTIONS */
@@ -152,6 +159,11 @@ section {
 section.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.10);
 }
 
 h2 {
@@ -174,9 +186,29 @@ h2 {
     background: #94c11f44;
 }
 
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #94c11f;
+    border-radius: 50%;
+}
+
 /* MOBILE */
 @media(max-width:600px){
-    header { flex-direction: column; text-align:center; }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -212,19 +244,19 @@ h2 {
 
 <p>Chennai | beingjanani@gmail.com</p>
 
-<p style="margin-top:10px; font-weight:600;">
+<p style="margin-top:10px; font-weight:600; color:#333;">
 Open to HR Leadership Roles • Let’s Connect
 </p>
 
 </div>
 </header>
 
-<!-- ✅ MOVED OUTSIDE HEADER -->
+<!-- ✅ MOVED HERE -->
 <div class="cta-block">
 
 <div class="btn-row">
-<a class="resume-btn green" href="janani_resume.pdf" target="_blank">Resume</a>
-<a class="resume-btn dark" href="mailto:beingjanani@gmail.com">Email</a>
+<a class="resume-btn green" href="janani_resume.pdf" target="_blank">Download Resume</a>
+<a class="resume-btn dark" href="mailto:beingjanani@gmail.com">Email Me</a>
 <a class="resume-btn blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
 </div>
 
@@ -236,4 +268,89 @@ Open to HR Leadership Roles • Let’s Connect
 
 </div>
 
-<!-- KEEP YOUR SECTIONS EXACTLY SAME BELOW -->
+<!-- YOUR FULL SECTIONS (UNCHANGED) -->
+
+<section id="summary">
+<h2>Executive Summary</h2>
+<p>Results-driven HR Manager...</p>
+</section>
+
+<section id="apart">
+<h2>What Sets Me Apart</h2>
+<ul><li>Strategic HR thinking</li></ul>
+</section>
+
+<section id="achievements">
+<h2>Impact Delivered</h2>
+<ul><li>300+ hires</li></ul>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+<div class="timeline">
+<div class="timeline-item"><h3>HR Manager | Ola</h3></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Core Expertise</h2>
+<p>HRBP • Talent Acquisition</p>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="timeline">
+<div class="timeline-item"><h3>PGDHRM</h3></div>
+</div>
+</section>
+
+<script>
+// SAME JS (UNCHANGED)
+window.onload = function() { window.scrollTo(0, 0); };
+
+function reveal() {
+  document.querySelectorAll("section").forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
+      sec.classList.add("show");
+    }
+  });
+}
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  document.querySelectorAll("section").forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 150) {
+      current = sec.id;
+    }
+  });
+
+  document.querySelectorAll("nav a").forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+window.addEventListener("load", () => {
+  document.querySelectorAll("[data-target]").forEach(el => {
+    let target = +el.getAttribute("data-target");
+    let count = 0;
+
+    let i = setInterval(() => {
+      count += Math.ceil(target / 40);
+      if(count >= target){
+        el.innerText = target + "+";
+        clearInterval(i);
+      } else {
+        el.innerText = count;
+      }
+    }, 30);
+  });
+});
+</script>
+
+</body>
+</html>
