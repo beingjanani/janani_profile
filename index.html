@@ -42,7 +42,9 @@ nav a.active {
     border-bottom: 2px solid #94c11f;
 }
 
-section { scroll-margin-top: 90px; }
+section { 
+    scroll-margin-top: 90px; 
+}
 
 /* HERO */
 header {
@@ -50,7 +52,6 @@ header {
     gap: 30px;
     padding: 50px 40px;
     align-items: center;
-    animation: fadeIn 0.8s ease;
 }
 
 .photo-frame {
@@ -121,16 +122,23 @@ h1 { margin: 0; font-family: 'Montserrat'; }
     transform: translateY(-2px);
 }
 
-/* IMPACT STRIP */
+/* IMPACT SECTION */
+#impact {
+    background: white;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 14px;
+}
+
 .impact-strip {
     display: flex;
     gap: 15px;
-    margin: 25px 40px;
+    margin-top: 20px;
 }
 
 .impact-card {
     flex: 1;
-    background: white;
+    background: #f9fafb;
     padding: 16px;
     border-radius: 10px;
     font-weight: 600;
@@ -200,11 +208,6 @@ h2 {
 
 #education { min-height: 250px; }
 
-@keyframes fadeIn {
-from {opacity:0; transform:translateY(-10px);}
-to {opacity:1; transform:translateY(0);}
-}
-
 @media(max-width:700px){
     header { flex-direction: column; text-align: center; }
     .impact-strip { flex-direction: column; }
@@ -261,12 +264,17 @@ HR professional with 15+ years of experience partnering with business leaders to
 </p>
 </section>
 
-<div class="impact-strip" id="impact">
+<section id="impact">
+<h2>Impact</h2>
+
+<div class="impact-strip">
 <div class="impact-card">Business HR Partnering</div>
 <div class="impact-card">Hiring Strategy & Execution</div>
 <div class="impact-card">Employee Engagement</div>
 <div class="impact-card">HR Operations Excellence</div>
 </div>
+
+</section>
 
 <section id="experience">
 <h2>Experience</h2>
@@ -343,18 +351,26 @@ history.scrollRestoration = 'manual';
 }
 window.onload = () => window.scrollTo(0,0);
 
-/* NAV ACTIVE */
-const sections = document.querySelectorAll("section, .impact-strip");
+/* NAV ACTIVE + REVEAL */
+const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
+
 let current = "";
 
 sections.forEach(sec => {
 const top = sec.offsetTop - 120;
 if (scrollY >= top) current = sec.id;
+
+/* reveal */
+const rect = sec.getBoundingClientRect();
+if(rect.top < window.innerHeight - 50){
+sec.classList.add("visible");
+}
 });
 
+/* fix last section */
 if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
 current = "education";
 }
@@ -363,14 +379,6 @@ navLinks.forEach(link => {
 link.classList.remove("active");
 if (link.getAttribute("href") === "#" + current) {
 link.classList.add("active");
-}
-});
-
-/* REVEAL ANIMATION */
-document.querySelectorAll("section").forEach(sec => {
-const rect = sec.getBoundingClientRect();
-if(rect.top < window.innerHeight - 50){
-sec.classList.add("visible");
 }
 });
 
