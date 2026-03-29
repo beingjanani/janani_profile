@@ -42,7 +42,7 @@ nav a.active {
     border-bottom: 2px solid #94c11f;
 }
 
-/* OFFSET FIX */
+/* OFFSET */
 section {
     scroll-margin-top: 90px;
 }
@@ -97,14 +97,14 @@ h1 { margin: 0; font-family: 'Montserrat'; }
     text-decoration: none;
 }
 
-/* VALUE STRIP */
-.value-strip {
+/* IMPACT STRIP */
+.impact-strip {
     display: flex;
     gap: 15px;
     margin: 25px 40px;
 }
 
-.value-card {
+.impact-card {
     flex: 1;
     background: white;
     padding: 16px;
@@ -156,15 +156,11 @@ h2 {
     padding-left: 18px;
 }
 
-/* FIX EDUCATION SCROLL */
-#education {
-    min-height: 250px;
-}
+#education { min-height: 250px; }
 
-/* MOBILE */
 @media(max-width:700px){
     header { flex-direction: column; text-align: center; }
-    .value-strip { flex-direction: column; }
+    .impact-strip { flex-direction: column; }
 }
 
 </style>
@@ -174,6 +170,7 @@ h2 {
 
 <nav>
 <a href="#summary">Summary</a>
+<a href="#impact">Impact</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 <a href="#education">Education</a>
@@ -188,7 +185,7 @@ h2 {
 <h1>Janani Balasubramanian</h1>
 
 <div class="headline">
-HR Business Partner enabling large-scale workforce growth, high-impact hiring & business transformation
+HR Business Partner enabling workforce growth, strategic hiring & business transformation
 </div>
 
 <div class="subhook">
@@ -204,18 +201,20 @@ HR Business Partner enabling large-scale workforce growth, high-impact hiring & 
 <a class="resume-btn" href="mailto:beingjanani@gmail.com" style="background:#333;">Email</a>
 </div>
 
-<div class="value-strip">
-<div class="value-card">Scaling Teams & Workforce Strategy</div>
-<div class="value-card">Business-Aligned HRBP Execution</div>
-<div class="value-card">Employee Engagement & Retention</div>
-</div>
-
 <section id="summary">
 <h2>Summary</h2>
 <p>
-HR leader with 15+ years of experience partnering with business leaders to drive hiring scale, employee engagement, and HR transformation initiatives.
+HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, talent acquisition, and employee engagement across manufacturing and corporate environments.
 </p>
 </section>
+
+<!-- IMPACT -->
+<div class="impact-strip" id="impact">
+<div class="impact-card">Business HR Partnering</div>
+<div class="impact-card">Workforce Planning & Hiring</div>
+<div class="impact-card">Employee Engagement & Retention</div>
+<div class="impact-card">HR Operations Excellence</div>
+</div>
 
 <section id="experience">
 <h2>Experience</h2>
@@ -224,23 +223,23 @@ HR leader with 15+ years of experience partnering with business leaders to drive
 
 <div class="exp-block">
 <div class="exp-year">Jan 2026 – Present</div>
-<h3>Ola Electric Technologies Pvt Ltd</h3>
+<h3>Ola Electric</h3>
 <div class="exp-role">Manager HR (HRBP)</div>
 <ul>
-<li>Driving HR strategy aligned to rapid business expansion</li>
-<li>Leading hiring for leadership roles</li>
-<li>Enhancing engagement and retention</li>
+<li>Partnering with business leaders to align HR strategy with organizational goals and growth plans</li>
+<li>Driving workforce planning and hiring initiatives for critical roles</li>
+<li>Strengthening employee engagement and retention through targeted HR interventions</li>
 </ul>
 </div>
 
 <div class="exp-block">
 <div class="exp-year">Mar 2020 – Dec 2025</div>
-<h3>Salcomp Technologies</h3>
+<h3>Salcomp</h3>
 <div class="exp-role">Deputy Manager (HRBP)</div>
 <ul>
-<li>Partnered with leadership on workforce planning</li>
-<li>Managed high-volume hiring delivery</li>
-<li>Improved HR processes and alignment</li>
+<li>Collaborated with leadership to support workforce planning and business expansion initiatives</li>
+<li>Led end-to-end hiring delivery across manufacturing and corporate roles</li>
+<li>Enhanced HR processes and ensured alignment with business objectives</li>
 </ul>
 </div>
 
@@ -249,9 +248,9 @@ HR leader with 15+ years of experience partnering with business leaders to drive
 <h3>Nokia</h3>
 <div class="exp-role">HR Senior Executive</div>
 <ul>
-<li>Handled employee engagement and relations</li>
-<li>Supported performance and HR analytics</li>
-<li>Worked in global HR environment</li>
+<li>Managed employee engagement and relations in a dynamic corporate environment</li>
+<li>Supported performance management and HR operations</li>
+<li>Contributed to HR initiatives in a global work setup</li>
 </ul>
 </div>
 
@@ -260,9 +259,9 @@ HR leader with 15+ years of experience partnering with business leaders to drive
 <h3>Arrant HR</h3>
 <div class="exp-role">HR Senior Executive</div>
 <ul>
-<li>Managed recruitment lifecycle</li>
-<li>Handled payroll and operations</li>
-<li>Built HR processes</li>
+<li>Handled end-to-end recruitment lifecycle for multiple clients</li>
+<li>Managed payroll and HR operations activities</li>
+<li>Supported HR process implementation and coordination</li>
 </ul>
 </div>
 
@@ -273,7 +272,7 @@ HR leader with 15+ years of experience partnering with business leaders to drive
 <section id="skills">
 <h2>Skills</h2>
 <p>
-HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
+HR Business Partnering • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
 </p>
 </section>
 
@@ -286,38 +285,34 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 
 <script>
 
-/* FORCE TOP ON REFRESH */
+/* FORCE TOP */
 if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
+history.scrollRestoration = 'manual';
 }
-window.onload = function() {
-    window.scrollTo(0, 0);
-};
+window.onload = () => window.scrollTo(0,0);
 
-/* NAV FIX */
-const sections = document.querySelectorAll("section");
+/* NAV ACTIVE */
+const sections = document.querySelectorAll("section, .impact-strip");
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
-    let current = "";
+let current = "";
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
+sections.forEach(sec => {
+const top = sec.offsetTop - 120;
+if (scrollY >= top) current = sec.id;
+});
 
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
-        current = "education";
-    }
+if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+current = "education";
+}
 
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
+navLinks.forEach(link => {
+link.classList.remove("active");
+if (link.getAttribute("href") === "#" + current) {
+link.classList.add("active");
+}
+});
 });
 
 </script>
