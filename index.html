@@ -68,13 +68,15 @@ header {
 
 h1 { margin: 0; font-family: 'Montserrat'; }
 
-.subtitle {
-    color: #94c11f;
-    font-weight: 600;
+.headline {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
 }
 
-.hook {
-    margin-top: 10px;
+.subhook {
+    margin-top: 8px;
+    color: #666;
     font-weight: 600;
 }
 
@@ -90,27 +92,52 @@ h1 { margin: 0; font-family: 'Montserrat'; }
     color: white;
     border-radius: 8px;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* VALUE STRIP */
+.value-strip {
+    display: flex;
+    gap: 15px;
+    margin: 25px 40px;
+}
+
+.value-card {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
 }
 
 /* STATS */
 .stats {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     margin-top: 15px;
 }
 
 .stat-box {
     background: white;
-    padding: 10px 14px;
-    border-radius: 10px;
-    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .stat-box h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* SECTIONS */
@@ -136,8 +163,9 @@ h2 {
 
 ul { line-height: 1.6; }
 
-@media(max-width:600px){
+@media(max-width:700px){
     header { flex-direction: column; text-align: center; }
+    .value-strip { flex-direction: column; }
 }
 
 </style>
@@ -161,13 +189,23 @@ ul { line-height: 1.6; }
 
 <div>
 <h1>Janani Balasubramanian</h1>
-<p class="subtitle">HR Manager | HRBP | Talent Strategy</p>
 
-<p class="hook">
-15+ years experience • HR Business Partner • Driving people & business alignment
-</p>
+<div class="headline">
+HR Business Partner Driving Workforce Strategy & Organizational Growth
+</div>
+
+<div class="subhook">
+15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+</div>
 
 <p>Chennai | beingjanani@gmail.com</p>
+
+<div class="stats">
+<div class="stat-box"><h3 data-target="15">0</h3><p>Years</p></div>
+<div class="stat-box"><h3 data-target="300">0</h3><p>Hires</p></div>
+<div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
+</div>
+
 </div>
 
 </header>
@@ -175,94 +213,64 @@ ul { line-height: 1.6; }
 <div class="cta-block">
 <a class="resume-btn" href="janani_resume.pdf" target="_blank">Download Resume</a>
 <a class="resume-btn" href="mailto:beingjanani@gmail.com" style="background:#333;">Email</a>
-
-<div class="stats">
-<div class="stat-box"><h3 data-target="15">0</h3><p>Years</p></div>
-<div class="stat-box"><h3 data-target="300">0</h3><p>Hires</p></div>
-<div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
 </div>
+
+<div class="value-strip">
+<div class="value-card">Talent Strategy & Workforce Planning</div>
+<div class="value-card">Employee Engagement & Retention</div>
+<div class="value-card">HR Operations & Compliance Excellence</div>
 </div>
 
 <section id="summary">
 <h2>Summary</h2>
 <p>
-Proactive and enthusiastic Human Resource Professional with 15+ years of experience in HRBP, talent acquisition, and employee engagement. Strategic thinker with strong business acumen and proven ability to influence, build relationships, and deliver measurable business results.
+Proactive and enthusiastic Human Resource Professional with 15+ years of experience in HRBP, talent acquisition, and employee engagement. Strategic thinker with strong business acumen and proven ability to influence and deliver business results.
 </p>
 </section>
 
 <section id="experience">
 <h2>Experience</h2>
 
-<h3>Ola Electric Technologies Pvt Ltd (Jan 2026 – Present)</h3>
-<p><b>Manager – HR</b></p>
-<ul>
-<li>Ensure competitive compensation structures including joining bonus and retention incentives</li>
-<li>Develop and update HR policies and ensure compliance</li>
-<li>Monitor employee performance and productivity metrics</li>
-<li>Support managers in goal setting and performance evaluations</li>
-<li>Plan manpower requirements in collaboration with department heads</li>
-<li>Drive and support change management initiatives</li>
-</ul>
+<h3>Ola Electric Technologies Pvt Ltd</h3>
+<p><i>Driving HR strategy, performance, and workforce planning in a high-growth environment.</i></p>
 
-<h3>Salcomp Technologies India Pvt Ltd (Mar 2020 – Dec 2025)</h3>
-<p><b>Deputy Manager – HRBP</b></p>
-<ul>
-<li>Managed end-to-end recruitment lifecycle aligned to business requirements</li>
-<li>Handled global hiring for niche R&D roles (PD, EE, FA)</li>
-<li>Supported DL/IDL hiring in coordination with central recruitment teams</li>
-<li>Partnered with project leads to support delivery and workforce planning</li>
-<li>Reviewed and improved HR processes, policies, and procedures</li>
-<li>Handled employee queries on compensation, benefits, and performance</li>
-<li>Drove employee engagement and HR initiatives</li>
-</ul>
+<h3>Salcomp Technologies</h3>
+<p><i>Led HRBP and global hiring for R&D and business-critical roles.</i></p>
 
-<h3>Nokia India Pvt Ltd (Aug 2012 – Feb 2020)</h3>
-<p><b>Senior Executive – HR</b></p>
-<ul>
-<li>Managed employee relations including attrition, retention, and workplace issues</li>
-<li>Conducted investigations and resolved grievances</li>
-<li>Led engagement programs, CSR, town halls, and R&R initiatives</li>
-<li>Analyzed HR data and presented insights to leadership</li>
-<li>Delivered training programs and internal communications</li>
-</ul>
+<h3>Nokia</h3>
+<p><i>Managed employee relations, engagement, and HR analytics for enterprise workforce.</i></p>
 
-<h3>Arrant HR Solutions (Jul 2008 – Mar 2011)</h3>
-<p><b>HR Admin</b></p>
-<ul>
-<li>Supported recruitment, onboarding, and HR operations</li>
-<li>Maintained employee records and HR database</li>
-<li>Assisted payroll and benefits administration</li>
-<li>Conducted orientations and exit interviews</li>
-</ul>
+<h3>Arrant HR</h3>
+<p><i>Built foundational HR operations including hiring, onboarding, and payroll support.</i></p>
 
 </section>
 
 <section id="achievements">
 <h2>Impact</h2>
 <ul>
-<li>15+ years of HR leadership across industries</li>
-<li>Strong HRBP alignment with business goals</li>
-<li>Delivered hiring and engagement at scale</li>
+<li>15+ years of HR leadership</li>
+<li>Handled large-scale hiring and HRBP functions</li>
+<li>Strong alignment between HR and business outcomes</li>
 </ul>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
 <p>
-HRBP • Talent Acquisition • Employee Engagement • Compensation & Benefits • HR Operations • Compliance • Workforce Planning
+HRBP • Talent Acquisition • Employee Engagement • Compensation & Benefits • HR Operations • Compliance
 </p>
 </section>
 
 <section id="education">
 <h2>Education</h2>
 <p><b>PGDHRM</b> – 2011 | Alagappa University</p>
-<p><b>MSW</b> – 2008 | Cauvery College, Trichy</p>
-<p><b>BSW</b> – 2006 | Cauvery College, Trichy</p>
+<p><b>MSW</b> – 2008 | Cauvery College</p>
+<p><b>BSW</b> – 2006 | Cauvery College</p>
 </section>
 
 <script>
 
-/* ALWAYS START TOP */
+/* START TOP */
 window.onload = function() {
   window.scrollTo(0, 0);
 };
@@ -279,7 +287,7 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
 
-/* NAV ACTIVE FIX (WITH BOTTOM DETECTION) */
+/* NAV ACTIVE + BOTTOM FIX */
 window.addEventListener("scroll", () => {
   let current = "";
   const sections = document.querySelectorAll("section");
@@ -290,7 +298,6 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  // 🔥 FIX: If at bottom → activate last section (Education)
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
     current = sections[sections.length - 1].id;
   }
