@@ -27,8 +27,8 @@ nav {
     background: rgba(255,255,255,0.7);
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 15px;
+    gap: 25px;
+    padding: 12px;
     border-bottom: 1px solid #eee;
     z-index: 1000;
 }
@@ -37,25 +37,10 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     color: #333;
-    position: relative;
     transition: 0.3s;
 }
 
-nav a:hover { color: #94c11f; }
-
-nav a.active {
-    color: #94c11f;
-}
-
-nav a.active::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #94c11f;
-    bottom: -5px;
-    left: 0;
-}
+nav a.active, nav a:hover { color: #94c11f; }
 
 /* HERO */
 header {
@@ -66,8 +51,8 @@ header {
 }
 
 .photo-frame {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 16px;
     overflow: hidden;
     border: 4px solid #94c11f;
@@ -78,88 +63,79 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center; /* ✅ FIXED */
 }
 
 h1 {
     margin: 0;
     font-family: 'Montserrat';
-    font-size: 32px;
 }
 
 .subtitle {
     color: #94c11f;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 
 .hook {
-    font-size: 15px;
+    margin-top: 10px;
     font-weight: 600;
     color: #444;
-    margin-top: 10px;
 }
 
 /* TAGS */
-.tags { margin: 10px 0; }
-
 .tag {
     display: inline-block;
     background: #eef6d5;
-    color: #5c7c12;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
-    margin: 5px 5px 0 0;
+    margin: 5px;
 }
 
 /* CTA */
-.cta-block {
-    margin: 0 40px 20px 40px;
-}
+.cta-block { margin: 0 40px; }
 
 .resume-btn {
     display: inline-block;
-    margin-right: 10px;
     margin-top: 15px;
-    padding: 12px 22px;
+    margin-right: 10px;
+    padding: 10px 18px;
     background: #94c11f;
     color: white;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
 }
 
-.resume-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-/* STATS */
+/* ✅ PREMIUM STATS */
 .stats {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 15px;
+    margin-top: 15px;
 }
 
 .stat-box {
     background: white;
-    padding: 15px 20px;
-    border-radius: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.stat-box h3 {
+    margin: 0;
+    font-size: 16px;
 }
 
 /* SECTIONS */
 section {
     background: white;
-    margin: 25px;
-    padding: 35px;
-    border-radius: 16px;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 14px;
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.5s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: 0.5s;
 }
 
 section.show {
@@ -167,47 +143,18 @@ section.show {
     transform: translateY(0);
 }
 
-section:hover {
-    transform: translateY(-6px);
-}
-
-/* HEADINGS */
 h2 {
-    border-left: 5px solid #94c11f;
-    padding-left: 12px;
-    margin-bottom: 15px;
+    border-left: 4px solid #94c11f;
+    padding-left: 10px;
 }
 
 /* TIMELINE */
 .timeline {
-    position: relative;
-    padding-left: 30px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    width: 3px;
-    height: 100%;
-    background: #94c11f44;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
     padding-left: 20px;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    background: #94c11f;
-    border-radius: 50%;
+.timeline-item {
+    margin-bottom: 20px;
 }
 
 /* MOBILE */
@@ -217,6 +164,7 @@ h2 {
         text-align: center;
     }
 }
+
 </style>
 </head>
 
@@ -224,11 +172,9 @@ h2 {
 
 <nav>
 <a href="#summary">Summary</a>
-<a href="#apart">Differentiator</a>
-<a href="#achievements">Impact</a>
 <a href="#experience">Experience</a>
-<a href="#skills">Expertise</a>
-<a href="#whyhire">Why Hire Me</a>
+<a href="#achievements">Impact</a>
+<a href="#skills">Skills</a>
 <a href="#education">Education</a>
 </nav>
 
@@ -239,21 +185,12 @@ h2 {
 </div>
 
 <div>
-
 <h1>Janani Balasubramanian</h1>
-
-<p class="subtitle">HR Manager | Driving Talent Strategy & Business Impact</p>
+<p class="subtitle">HR Manager | Talent Strategy & Business Impact</p>
 
 <p class="hook">
-Transforming people strategies into measurable business outcomes • 300+ hires • 15+ years impact
+15+ years experience • 300+ hires • Driving people strategy aligned to business growth
 </p>
-
-<div class="tags">
-<span class="tag">HR Business Partnering</span>
-<span class="tag">Talent Strategy</span>
-<span class="tag">Workforce Planning</span>
-<span class="tag">Employee Experience</span>
-</div>
 
 <p>Chennai | beingjanani@gmail.com</p>
 
@@ -263,114 +200,86 @@ Transforming people strategies into measurable business outcomes • 300+ hires 
 <div class="cta-block">
 
 <a class="resume-btn" href="janani_resume.pdf" target="_blank">Download Resume</a>
-
-<a class="resume-btn" href="mailto:beingjanani@gmail.com" style="background:#333;">
-Email Me
-</a>
-
-<a class="resume-btn" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank" style="background:#0077b5;">
-LinkedIn
-</a>
+<a class="resume-btn" href="mailto:beingjanani@gmail.com" style="background:#333;">Email</a>
 
 <div class="stats">
 <div class="stat-box"><h3 data-target="15">0</h3><p>Years</p></div>
 <div class="stat-box"><h3 data-target="300">0</h3><p>Hires</p></div>
-<div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
+<div class="stat-box"><h3 data-target="4">0</h3><p>Companies</p></div>
 </div>
 
 </div>
 
 <section id="summary">
-<h2>Executive Summary</h2>
+<h2>Summary</h2>
 <p>
-HR leader with 15+ years of experience partnering with business leaders to drive workforce strategy, talent acquisition, and employee engagement. Known for delivering scalable HR solutions that improve retention, productivity, and organizational effectiveness.
+Proactive HR leader with 13+ years of experience in talent acquisition, employee engagement, and HR operations. Strong business partner known for driving HR strategies that improve retention, engagement, and organizational performance.
 </p>
-</section>
-
-<section id="apart">
-<h2>What Sets Me Apart</h2>
-<ul>
-<li>Strategic HR mindset with execution excellence</li>
-<li>Strong alignment between people strategy and business goals</li>
-<li>Trusted advisor to leadership teams</li>
-<li>Focus on scalable, sustainable HR practices</li>
-</ul>
-</section>
-
-<section id="achievements">
-<h2>Impact Delivered</h2>
-<ul>
-<li><b>Scaled Hiring:</b> Delivered <b>300+ hires</b> by optimizing hiring strategy</li>
-<li><b>Improved Retention:</b> Strengthened engagement and reduced attrition</li>
-<li><b>Business Alignment:</b> Partnered with leaders for workforce planning</li>
-<li><b>HR Transformation:</b> Standardized HR policies and compliance</li>
-</ul>
 </section>
 
 <section id="experience">
-<h2>Professional Experience</h2>
+<h2>Experience</h2>
+
 <div class="timeline">
 
 <div class="timeline-item">
-<h3>HR Manager | Ola Electric</h3>
-<p>Jan 2026 – Present</p>
+<b>Salcomp Technologies</b> (2020 – Present)<br>
+Deputy Manager – HRBP
+</div>
+
+<div class="timeline-item">
+<b>Nokia</b> (2012 – 2020)<br>
+Senior Executive
+</div>
+
+<div class="timeline-item">
+<b>Arrant HR</b> (2008 – 2011)<br>
+HR Admin
+</div>
+
+</div>
+
+</section>
+
+<section id="achievements">
+<h2>Impact</h2>
 <ul>
-<li><b>Led workforce planning</b> aligned with business growth</li>
-<li><b>Partnered with leadership</b> on performance management</li>
-<li><b>Improved hiring effectiveness</b> through structured processes</li>
-<li><b>Ensured HR compliance</b> and policy implementation</li>
-<li><b>Drove change initiatives</b> for transformation</li>
+<li>Delivered 300+ hires across functions</li>
+<li>Improved employee engagement and retention</li>
+<li>Led workforce planning with leadership teams</li>
+<li>Strengthened HR policies and compliance</li>
 </ul>
-</div>
-
-<div class="timeline-item">
-<h3>Deputy Manager | Salcomp</h3>
-<p>Mar 2020 – Dec 2025</p>
-</div>
-
-<div class="timeline-item">
-<h3>Senior Executive | Nokia</h3>
-<p>Aug 2012 – Feb 2020</p>
-</div>
-
-<div class="timeline-item">
-<h3>HR Admin | Arrant HR</h3>
-<p>Jul 2008 – Mar 2011</p>
-</div>
-
-</div>
 </section>
 
 <section id="skills">
-<h2>Core Expertise</h2>
+<h2>Skills</h2>
 <p>
-HR Business Partnering • Talent Acquisition • Workforce Planning • Employee Engagement • HR Compliance • Performance Management
+Recruitment • Engagement • HR Operations • Compliance • Workforce Planning
 </p>
-</section>
-
-<section id="whyhire">
-<h2>Why Hire Me</h2>
-<ul>
-<li>I align people strategy with business growth</li>
-<li>Strong balance of strategic thinking and execution</li>
-<li>Build scalable HR systems</li>
-<li>Trusted leadership partner</li>
-</ul>
 </section>
 
 <section id="education">
 <h2>Education</h2>
-<p>PGDHRM • MSW • BSW</p>
-</section>
 
-<section>
-<h2>Let’s Connect</h2>
-<p>
-If you're looking for an HR leader who can drive business impact through people strategy,
-I’d love to connect and contribute to your organization’s growth.
-</p>
+<div class="timeline">
 
-<a class="resume-btn" href="mailto:beingjanani@gmail.com">Start a Conversation</a>
+<div class="timeline-item">
+<b>PGDHRM</b> – 2011<br>
+Alagappa University, Karaikudi
+</div>
+
+<div class="timeline-item">
+<b>MSW</b> – 2008<br>
+Cauvery College, Trichy
+</div>
+
+<div class="timeline-item">
+<b>BSW</b> – 2006<br>
+Cauvery College, Trichy
+</div>
+
+</div>
+
 </section>
 
 <script>
@@ -385,22 +294,6 @@ function reveal() {
 
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
-
-window.addEventListener("scroll", () => {
-  let current = "";
-  document.querySelectorAll("section").forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 150) {
-      current = sec.id;
-    }
-  });
-
-  document.querySelectorAll("nav a").forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
 
 window.addEventListener("load", () => {
   document.querySelectorAll("[data-target]").forEach(el => {
