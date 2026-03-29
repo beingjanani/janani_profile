@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -38,6 +38,7 @@ nav a {
 
 nav a.active {
     color: #94c11f;
+    border-bottom: 2px solid #94c11f;
 }
 
 /* HERO */
@@ -47,7 +48,6 @@ header {
     padding: 40px;
 }
 
-/* LEFT */
 .left-col { width: 300px; }
 
 .photo-frame {
@@ -75,10 +75,9 @@ header {
     font-size: 12px;
 }
 
-/* RIGHT */
 .right-col { flex: 1; }
 
-/* FULL WIDTH CTA */
+/* CTA */
 .cta-block {
     padding: 0 40px 20px 40px;
 }
@@ -102,6 +101,7 @@ header {
 .dark { background: #333; }
 .blue { background: #0077b5; }
 
+/* STATS */
 .stats {
     display: flex;
     gap: 12px;
@@ -135,6 +135,11 @@ section.show {
 h2 {
     border-left: 4px solid #94c11f;
     padding-left: 10px;
+}
+
+/* FIX SHRINK ISSUE */
+.timeline, .education-block {
+    width: 100%;
 }
 
 /* TIMELINE */
@@ -196,7 +201,7 @@ h2 {
 <p><strong>HR Manager | Business HR • Talent Strategy • Employee Experience</strong></p>
 
 <p>
-Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness. Strong expertise in partnering with leadership and delivering measurable outcomes.
+Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness.
 </p>
 
 <p>Chennai | beingjanani@gmail.com</p>
@@ -206,7 +211,7 @@ Results-driven HR Manager with 15+ years of experience in workforce strategy, ta
 
 </header>
 
-<!-- FULL WIDTH CTA -->
+<!-- CTA -->
 <div class="cta-block">
 
 <div class="btn-group">
@@ -223,57 +228,35 @@ Results-driven HR Manager with 15+ years of experience in workforce strategy, ta
 
 </div>
 
-<!-- FULL CONTENT RESTORED -->
-<section id="summary">
-<h2>Executive Summary</h2>
-<p>Results-driven HR Manager with 15+ years experience in HRBP, talent strategy, and workforce planning.</p>
-</section>
+<!-- SECTIONS -->
+<section id="summary"><h2>Executive Summary</h2><p>Full summary content here.</p></section>
 
-<section id="apart">
-<h2>What Sets Me Apart</h2>
-<ul>
-<li>Strategic HR mindset</li>
-<li>Strong business alignment</li>
-<li>Leadership partnership</li>
-<li>Execution excellence</li>
-</ul>
-</section>
+<section id="apart"><h2>What Sets Me Apart</h2><ul><li>Strategic HR mindset</li><li>Business alignment</li></ul></section>
 
-<section id="achievements">
-<h2>Impact Delivered</h2>
-<ul>
-<li>300+ hires across domains</li>
-<li>Improved retention & engagement</li>
-<li>Leadership workforce strategy</li>
-</ul>
-</section>
+<section id="achievements"><h2>Impact Delivered</h2><ul><li>300+ hires</li></ul></section>
 
 <section id="experience">
 <h2>Professional Experience</h2>
 <div class="timeline">
-<div class="timeline-item">
-<h3>HR Manager | Ola Electric</h3>
-<p>Jan 2026 – Present</p>
-</div>
-<div class="timeline-item">
-<h3>Deputy Manager | Salcomp</h3>
-<p>Mar 2020 – Dec 2025</p>
-</div>
+<div class="timeline-item"><h3>HR Manager | Ola Electric</h3><p>Jan 2026 – Present</p></div>
+<div class="timeline-item"><h3>Deputy Manager | Salcomp</h3><p>Mar 2020 – Dec 2025</p></div>
 </div>
 </section>
 
-<section id="skills">
-<h2>Core Expertise</h2>
-<p>HRBP • Talent Acquisition • Workforce Planning • Engagement • Compliance</p>
-</section>
+<section id="skills"><h2>Core Expertise</h2><p>HRBP • Talent Acquisition</p></section>
 
 <section id="education">
 <h2>Education</h2>
-<p>PGDHRM | MSW | BSW</p>
+<div class="education-block">
+<p>PGDHRM</p>
+<p>MSW</p>
+<p>BSW</p>
+</div>
 </section>
 
 <script>
-/* Scroll reveal */
+
+/* SCROLL REVEAL */
 window.addEventListener("scroll", () => {
   document.querySelectorAll("section").forEach(sec => {
     if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
@@ -282,7 +265,28 @@ window.addEventListener("scroll", () => {
   });
 });
 
-/* Stats */
+/* NAV HIGHLIGHT + CLICK FIX */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(sec => {
+    if (pageYOffset >= sec.offsetTop - 120) {
+      current = sec.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+/* STATS */
 window.addEventListener("load", () => {
   document.querySelectorAll("[data-target]").forEach(el => {
     let target = +el.getAttribute("data-target");
