@@ -36,6 +36,7 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     color: #333;
+    padding-bottom: 4px;
 }
 
 nav a.active {
@@ -63,7 +64,6 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
 }
 
 h1 { margin: 0; font-family: 'Montserrat'; }
@@ -95,9 +95,7 @@ h1 { margin: 0; font-family: 'Montserrat'; }
     transition: 0.3s;
 }
 
-.resume-btn:hover {
-    transform: translateY(-2px);
-}
+.resume-btn:hover { transform: translateY(-2px); }
 
 /* VALUE STRIP */
 .value-strip {
@@ -109,36 +107,15 @@ h1 { margin: 0; font-family: 'Montserrat'; }
 .value-card {
     flex: 1;
     background: white;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 14px;
+    border-radius: 10px;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: 0.3s;
 }
 
-.value-card:hover {
-    transform: translateY(-5px);
-}
-
-/* STATS */
-.stats {
-    display: flex;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.stat-box {
-    background: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    text-align: center;
-}
-
-.stat-box h3 {
-    margin: 0;
-    font-size: 14px;
-}
+.value-card:hover { transform: translateY(-4px); }
 
 /* SECTIONS */
 section {
@@ -146,14 +123,6 @@ section {
     margin: 20px;
     padding: 30px;
     border-radius: 14px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.5s;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 h2 {
@@ -161,7 +130,7 @@ h2 {
     padding-left: 10px;
 }
 
-/* TIMELINE EXPERIENCE */
+/* TIMELINE */
 .timeline {
     position: relative;
     margin-left: 20px;
@@ -179,9 +148,7 @@ h2 {
     transition: 0.3s;
 }
 
-.exp-block:hover {
-    transform: translateY(-4px);
-}
+.exp-block:hover { transform: translateY(-4px); }
 
 .exp-block::before {
     content: "";
@@ -210,6 +177,9 @@ h2 {
     margin: 8px 0 0;
 }
 
+#education { min-height: 200px; }
+
+/* MOBILE */
 @media(max-width:700px){
     header { flex-direction: column; text-align: center; }
     .value-strip { flex-direction: column; }
@@ -223,13 +193,11 @@ h2 {
 <nav>
 <a href="#summary">Summary</a>
 <a href="#experience">Experience</a>
-<a href="#achievements">Impact</a>
 <a href="#skills">Skills</a>
 <a href="#education">Education</a>
 </nav>
 
 <header>
-
 <div class="photo-frame">
 <img src="janani_profile.jpg">
 </div>
@@ -246,15 +214,7 @@ HR Business Partner Driving Workforce Strategy & Organizational Growth
 </div>
 
 <p>Chennai | beingjanani@gmail.com</p>
-
-<div class="stats">
-<div class="stat-box"><h3 data-target="15">0</h3><p>Years</p></div>
-<div class="stat-box"><h3 data-target="300">0</h3><p>Hires</p></div>
-<div class="stat-box"><h3 data-target="4">0</h3><p>Organizations</p></div>
 </div>
-
-</div>
-
 </header>
 
 <div class="cta-block">
@@ -263,15 +223,15 @@ HR Business Partner Driving Workforce Strategy & Organizational Growth
 </div>
 
 <div class="value-strip">
-<div class="value-card">Talent Strategy & Workforce Planning</div>
-<div class="value-card">Employee Engagement & Retention</div>
-<div class="value-card">HR Operations & Compliance Excellence</div>
+<div class="value-card">Talent Strategy</div>
+<div class="value-card">Employee Engagement</div>
+<div class="value-card">HR Operations</div>
 </div>
 
 <section id="summary">
 <h2>Summary</h2>
 <p>
-Proactive and enthusiastic Human Resource Professional with 15+ years of experience in HRBP, talent acquisition, and employee engagement. Strategic thinker with strong business acumen and proven ability to influence and deliver business results.
+HR professional with 15+ years of experience across HRBP, talent acquisition, and employee engagement, driving business-aligned workforce strategies.
 </p>
 </section>
 
@@ -281,66 +241,57 @@ Proactive and enthusiastic Human Resource Professional with 15+ years of experie
 <div class="timeline">
 
 <div class="exp-block">
-<div class="exp-year">Current</div>
+<div class="exp-year">2022 – Present</div>
 <h3>Ola Electric Technologies Pvt Ltd</h3>
-<div class="exp-role">HR Business Partner</div>
+<div class="exp-role">Manager HR (HRBP)</div>
 <ul>
-<li>Partnering with business leaders to drive workforce planning in a high-growth environment</li>
-<li>Managing end-to-end talent acquisition for critical and leadership roles</li>
-<li>Driving employee engagement and retention strategies aligned to business goals</li>
+<li>Driving HR strategy aligned with business growth</li>
+<li>Leading hiring for key and leadership roles</li>
+<li>Strengthening engagement and retention initiatives</li>
 </ul>
 </div>
 
 <div class="exp-block">
-<div class="exp-year">Previous</div>
+<div class="exp-year">2017 – 2022</div>
 <h3>Salcomp Technologies</h3>
-<div class="exp-role">HR Business Partner</div>
+<div class="exp-role">Deputy Manager (HRBP)</div>
 <ul>
-<li>Led HRBP initiatives supporting R&D and global business units</li>
-<li>Handled large-scale hiring for niche and business-critical roles</li>
-<li>Strengthened HR operations and stakeholder alignment</li>
+<li>Partnered with global teams on HR initiatives</li>
+<li>Managed large-scale recruitment delivery</li>
+<li>Improved HR processes and stakeholder alignment</li>
 </ul>
 </div>
 
 <div class="exp-block">
-<div class="exp-year">Earlier</div>
+<div class="exp-year">2012 – 2017</div>
 <h3>Nokia</h3>
-<div class="exp-role">HR Specialist</div>
+<div class="exp-role">HR Senior Executive</div>
 <ul>
-<li>Managed employee relations and engagement across enterprise workforce</li>
-<li>Supported HR analytics and performance management</li>
-<li>Collaborated with leadership on organizational effectiveness</li>
+<li>Handled employee relations and engagement programs</li>
+<li>Supported performance management processes</li>
+<li>Worked on HR analytics and reporting</li>
 </ul>
 </div>
 
 <div class="exp-block">
-<div class="exp-year">Career Start</div>
+<div class="exp-year">2008 – 2012</div>
 <h3>Arrant HR</h3>
-<div class="exp-role">HR Executive</div>
+<div class="exp-role">HR Senior Executive</div>
 <ul>
-<li>Handled recruitment, onboarding, and payroll coordination</li>
+<li>Managed recruitment and onboarding lifecycle</li>
+<li>Handled payroll and HR operations</li>
 <li>Built foundational HR processes</li>
-<li>Supported end-to-end HR operations</li>
 </ul>
 </div>
 
 </div>
 
-</section>
-
-<section id="achievements">
-<h2>Impact</h2>
-<ul>
-<li>15+ years of HR leadership</li>
-<li>Handled large-scale hiring and HRBP functions</li>
-<li>Strong alignment between HR and business outcomes</li>
-</ul>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
 <p>
-HRBP • Talent Acquisition • Employee Engagement • Compensation & Benefits • HR Operations • Compliance
+HRBP • Talent Acquisition • Employee Engagement • HR Operations • Compliance
 </p>
 </section>
 
@@ -353,58 +304,31 @@ HRBP • Talent Acquisition • Employee Engagement • Compensation & Benefits 
 
 <script>
 
-/* START TOP */
+/* ALWAYS START TOP */
 window.onload = function() {
-  window.scrollTo(0, 0);
+    window.scrollTo(0,0);
 };
 
-/* REVEAL */
-function reveal() {
-  document.querySelectorAll("section").forEach(sec => {
-    if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
-      sec.classList.add("show");
-    }
-  });
-}
+/* NAV HIGHLIGHT */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
-
-/* NAV ACTIVE */
 window.addEventListener("scroll", () => {
-  let current = "";
-  const sections = document.querySelectorAll("section");
+    let current = "";
 
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 120) {
-      current = sec.id;
-    }
-  });
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
 
-  document.querySelectorAll("nav a").forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-
-/* STATS */
-window.addEventListener("load", () => {
-  document.querySelectorAll("[data-target]").forEach(el => {
-    let target = +el.getAttribute("data-target");
-    let count = 0;
-
-    let i = setInterval(() => {
-      count += Math.ceil(target / 40);
-      if(count >= target){
-        el.innerText = target + "+";
-        clearInterval(i);
-      } else {
-        el.innerText = count;
-      }
-    }, 30);
-  });
+    navLinks.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("href") === "#" + current) {
+            a.classList.add("active");
+        }
+    });
 });
 
 </script>
