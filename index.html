@@ -286,6 +286,14 @@ HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • H
 
 <script>
 
+/* FORCE TOP ON REFRESH */
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.onload = function() {
+    window.scrollTo(0, 0);
+};
+
 /* NAV FIX */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
