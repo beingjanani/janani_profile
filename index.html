@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
 <style>
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -34,67 +35,85 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     color: #333;
+    position: relative;
 }
 
 nav a.active {
     color: #94c11f;
-    border-bottom: 2px solid #94c11f;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #94c11f;
+    bottom: -5px;
+    left: 0;
 }
 
 /* HERO */
 header {
     display: flex;
-    gap: 40px;
+    gap: 20px;
     padding: 40px;
+    align-items: center;
 }
 
-.left-col { width: 300px; }
-
 .photo-frame {
-    width: 170px;
-    height: 170px;
-    border-radius: 16px;
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
     overflow: hidden;
     border: 4px solid #94c11f;
+    flex-shrink: 0;
 }
 
 .photo-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center top;
+}
+
+h1 { margin: 0; font-family: 'Montserrat'; }
+
+.subtitle {
+    color: #94c11f;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 /* TAGS */
+.tags { margin: 10px 0; }
+
 .tag {
     display: inline-block;
     background: #eef6d5;
     padding: 6px 12px;
     border-radius: 20px;
-    margin: 5px;
     font-size: 12px;
+    margin: 5px 5px 0 0;
 }
 
-.right-col { flex: 1; }
-
-/* CTA */
+/* CTA BLOCK (NEW POSITION SAFE) */
 .cta-block {
-    padding: 0 40px 20px 40px;
+    margin: 0 40px 20px 40px;
 }
 
-.btn-group {
+/* BUTTONS */
+.btn-row {
     display: flex;
     gap: 12px;
 }
 
-.btn {
+.resume-btn {
     flex: 1;
-    padding: 14px;
     text-align: center;
+    padding: 12px;
     color: white;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
 }
 
 .green { background: #94c11f; }
@@ -104,14 +123,14 @@ header {
 /* STATS */
 .stats {
     display: flex;
-    gap: 12px;
+    gap: 20px;
     margin-top: 15px;
 }
 
 .stat-box {
     flex: 1;
     background: white;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     text-align: center;
 }
@@ -122,9 +141,12 @@ section {
     margin: 20px;
     padding: 30px;
     border-radius: 14px;
+
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.5s ease;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
 section.show {
@@ -135,11 +157,6 @@ section.show {
 h2 {
     border-left: 4px solid #94c11f;
     padding-left: 10px;
-}
-
-/* FIX SHRINK ISSUE */
-.timeline, .education-block {
-    width: 100%;
 }
 
 /* TIMELINE */
@@ -157,14 +174,9 @@ h2 {
     background: #94c11f44;
 }
 
-.timeline-item {
-    margin-bottom: 25px;
-}
-
 /* MOBILE */
-@media(max-width:768px){
-    header { flex-direction: column; }
-    .left-col { width: 100%; }
+@media(max-width:600px){
+    header { flex-direction: column; text-align:center; }
 }
 </style>
 </head>
@@ -181,43 +193,39 @@ h2 {
 </nav>
 
 <header>
-
-<div class="left-col">
 <div class="photo-frame">
 <img src="janani_profile.jpg">
 </div>
 
-<div style="margin-top:15px;">
+<div>
+<h1>Janani Balasubramanian</h1>
+
+<p class="subtitle">HR Manager | Business HR • Talent Strategy • Employee Experience</p>
+
+<div class="tags">
 <span class="tag">HR Business Partnering</span>
 <span class="tag">Talent Acquisition</span>
 <span class="tag">Workforce Planning</span>
 <span class="tag">Employee Engagement</span>
+<span class="tag">HR Compliance</span>
 </div>
-</div>
-
-<div class="right-col">
-<h1>Janani Balasubramanian</h1>
-
-<p><strong>HR Manager | Business HR • Talent Strategy • Employee Experience</strong></p>
-
-<p>
-Results-driven HR Manager with 15+ years of experience in workforce strategy, talent acquisition, and organizational effectiveness.
-</p>
 
 <p>Chennai | beingjanani@gmail.com</p>
 
-<p><strong>Open to HR Leadership Roles • Let’s Connect</strong></p>
-</div>
+<p style="margin-top:10px; font-weight:600;">
+Open to HR Leadership Roles • Let’s Connect
+</p>
 
+</div>
 </header>
 
-<!-- CTA -->
+<!-- ✅ MOVED OUTSIDE HEADER -->
 <div class="cta-block">
 
-<div class="btn-group">
-<a class="btn green" href="janani_resume.pdf" target="_blank">Resume</a>
-<a class="btn dark" href="mailto:beingjanani@gmail.com">Email</a>
-<a class="btn blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
+<div class="btn-row">
+<a class="resume-btn green" href="janani_resume.pdf" target="_blank">Resume</a>
+<a class="resume-btn dark" href="mailto:beingjanani@gmail.com">Email</a>
+<a class="resume-btn blue" href="https://www.linkedin.com/in/janani-b-40a6735a/" target="_blank">LinkedIn</a>
 </div>
 
 <div class="stats">
@@ -228,81 +236,4 @@ Results-driven HR Manager with 15+ years of experience in workforce strategy, ta
 
 </div>
 
-<!-- SECTIONS -->
-<section id="summary"><h2>Executive Summary</h2><p>Full summary content here.</p></section>
-
-<section id="apart"><h2>What Sets Me Apart</h2><ul><li>Strategic HR mindset</li><li>Business alignment</li></ul></section>
-
-<section id="achievements"><h2>Impact Delivered</h2><ul><li>300+ hires</li></ul></section>
-
-<section id="experience">
-<h2>Professional Experience</h2>
-<div class="timeline">
-<div class="timeline-item"><h3>HR Manager | Ola Electric</h3><p>Jan 2026 – Present</p></div>
-<div class="timeline-item"><h3>Deputy Manager | Salcomp</h3><p>Mar 2020 – Dec 2025</p></div>
-</div>
-</section>
-
-<section id="skills"><h2>Core Expertise</h2><p>HRBP • Talent Acquisition</p></section>
-
-<section id="education">
-<h2>Education</h2>
-<div class="education-block">
-<p>PGDHRM</p>
-<p>MSW</p>
-<p>BSW</p>
-</div>
-</section>
-
-<script>
-
-/* SCROLL REVEAL */
-window.addEventListener("scroll", () => {
-  document.querySelectorAll("section").forEach(sec => {
-    if (sec.getBoundingClientRect().top < window.innerHeight * 0.85) {
-      sec.classList.add("show");
-    }
-  });
-});
-
-/* NAV HIGHLIGHT + CLICK FIX */
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(sec => {
-    if (pageYOffset >= sec.offsetTop - 120) {
-      current = sec.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-
-/* STATS */
-window.addEventListener("load", () => {
-  document.querySelectorAll("[data-target]").forEach(el => {
-    let target = +el.getAttribute("data-target");
-    let count = 0;
-    let i = setInterval(() => {
-      count += Math.ceil(target / 40);
-      if (count >= target) {
-        el.innerText = target + "+";
-        clearInterval(i);
-      } else {
-        el.innerText = count;
-      }
-    }, 30);
-  });
-});
-</script>
-
-</body>
-</html>
+<!-- KEEP YOUR SECTIONS EXACTLY SAME BELOW -->
