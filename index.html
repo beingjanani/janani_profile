@@ -1,701 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janani Balasubramanian | HR Manager</title>
 
-<title>Janani Balasubramanian | HR Manager</title>
-<meta name="description" content="Janani Balasubramanian | HRBP leader driving hiring strategy, workforce scale, and business-aligned people decisions.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="canonical" href="https://jananihr.com/">
-<link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<meta property="og:title" content="Janani Balasubramanian | HR Manager">
-<meta property="og:description" content="HRBP leader driving hiring strategy, workforce scale & business-aligned people decisions.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://jananihr.com/">
-<meta property="og:image" content="https://jananihr.com/janani_profile.jpg">
+    html {
+      scroll-behavior: auto; /* JS controls smooth scrolling */
+      -webkit-text-size-adjust: 100%;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #f5f7fa, #eef6d5);
+      color: #222;
+      overflow-x: hidden;
+    }
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-html {
-    scroll-behavior: auto; /* JS handles smooth scroll only for nav clicks */
-}
-
-body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to bottom, #f5f7fa, #eef6d5);
-    color: #222;
-    overflow-x: hidden;
-    width: 100%;
-}
-
-/* NAV */
-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid #eee;
-    z-index: 1000;
-}
-
-.nav-inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 20px;
-    position: relative;
-}
-
-.nav-brand {
-    display: none;
-}
-
-.nav-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    font-size: 26px;
-    line-height: 1;
-    cursor: pointer;
-    color: #333;
-    padding: 4px 8px;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: nowrap;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #333;
-    transition: color 0.2s ease;
-}
-
-nav a:hover {
-    color: #94c11f;
-}
-
-nav a.active {
-    color: #94c11f;
-    border-bottom: 2px solid #94c11f;
-    padding-bottom: 3px;
-}
-
-section {
-    scroll-margin-top: 90px;
-}
-
-/* HERO */
-header {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    gap: 30px;
-    padding: 50px 40px 30px;
-    align-items: center;
-}
-
-.photo-frame {
-    width: 150px;
-    height: 150px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 4px solid #94c11f;
-    flex-shrink: 0;
-    background: #fff;
-}
-
-.photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-}
-
-h1 {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.15;
-}
-
-.signature {
-    font-size: clamp(18px, 2.4vw, 22px);
-    font-weight: 700;
-    margin-top: 10px;
-    line-height: 1.4;
-}
-
-.subhook {
-    margin-top: 8px;
-    color: #666;
-    font-weight: 600;
-    line-height: 1.5;
-}
-
-/* IMPACT BOX */
-.impact-box {
-    margin-top: 18px;
-    background: #ffffff;
-    border-left: 4px solid #94c11f;
-    padding: 15px 18px;
-    border-radius: 10px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
-}
-
-.impact-box:hover {
-    transform: translateY(-3px);
-}
-
-.impact-box p {
-    margin: 6px 0;
-    font-weight: 600;
-    line-height: 1.5;
-}
-
-.contact-line {
-    margin-top: 14px;
-    color: #444;
-    word-break: break-word;
-}
-
-/* CTA */
-.cta-block {
-    max-width: 1180px;
-    margin: 0 auto 10px;
-    padding: 0 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.resume-btn {
-    display: inline-block;
-    padding: 11px 18px;
-    background: #94c11f;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    font-weight: 600;
-    text-align: center;
-}
-
-.resume-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.95;
-}
-
-/* CONTENT WRAPPER FEEL */
-.content-wrap {
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-/* IMPACT SECTION */
-#impact {
-    background: white;
-    margin: 20px;
-    padding: 30px;
-    border-radius: 14px;
-}
-
-.impact-strip {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.impact-card {
-    flex: 1 1 220px;
-    min-width: 0;
-    background: #f9fafb;
-    padding: 16px;
-    border-radius: 10px;
-    font-weight: 600;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
-}
-
-.impact-card:hover {
-    transform: translateY(-3px);
-}
-
-/* SECTIONS */
-section {
-    background: white;
-    margin: 20px;
-    padding: 30px;
-    border-radius: 14px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    border-left: 4px solid #94c11f;
-    padding-left: 10px;
-    margin-top: 0;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* TIMELINE */
-.timeline {
-    margin-left: 20px;
-    padding-left: 20px;
-    border-left: 3px solid #94c11f;
-}
-
-.exp-block {
-    margin-bottom: 24px;
-    padding: 18px 22px;
-    border-radius: 12px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
-    background: #fff;
-}
-
-.exp-block:hover {
-    transform: translateY(-3px);
-}
-
-.exp-year {
-    font-size: 12px;
-    color: #888;
-    font-weight: 600;
-}
-
-.exp-role {
-    font-weight: 700;
-    margin: 5px 0;
-}
-
-.exp-block h3 {
-    margin: 8px 0 6px;
-}
-
-.exp-block ul {
-    margin-top: 10px;
-    padding-left: 18px;
-    line-height: 1.6;
-}
-
-#education {
-    min-height: 250px;
-}
-
-/* MOBILE */
-@media (max-width: 700px) {
+    /* NAV */
     nav {
-        position: sticky;
-        top: 0;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
     }
 
-    .nav-inner {
-        justify-content: space-between;
-        padding: 12px 16px;
+    nav::-webkit-scrollbar {
+      display: none;
     }
 
-    .nav-brand {
-        display: block;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        color: #333;
-        max-width: 70%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+      padding-bottom: 4px;
+      flex-shrink: 0;
     }
 
-    .nav-toggle {
-        display: block;
+    nav a.active {
+      color: #94c11f;
+      border-bottom: 2px solid #94c11f;
     }
 
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 0;
-        background: rgba(255,255,255,0.99);
-        border-bottom: 1px solid #eee;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    section {
+      scroll-margin-top: 90px;
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 14px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
     }
 
-    .nav-links.open {
-        display: flex;
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .nav-links a {
-        padding: 14px 16px;
-        border-top: 1px solid #f2f2f2;
-        font-size: 15px;
-    }
-
-    .nav-links a.active {
-        border-bottom: none;
-        background: #f8fbe9;
-        padding-bottom: 14px;
-    }
-
+    /* HERO */
     header {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px 20px;
-        gap: 20px;
+      display: flex;
+      gap: 30px;
+      padding: 50px 40px 30px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .photo-frame {
-        width: 130px;
-        height: 130px;
+      width: 150px;
+      height: 150px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 4px solid #94c11f;
+      flex-shrink: 0;
+      background: #fff;
     }
 
-    .impact-strip {
-        flex-direction: column;
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
 
+    h1 {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 34px;
+      line-height: 1.2;
+      color: #1f2937;
+    }
+
+    .signature {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 10px;
+      line-height: 1.4;
+      color: #111827;
+    }
+
+    .subhook {
+      margin-top: 8px;
+      color: #666;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .contact-line {
+      margin-top: 14px;
+      color: #444;
+      font-weight: 600;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    /* IMPACT BOX */
+    .impact-box {
+      margin-top: 18px;
+      background: #ffffff;
+      border-left: 4px solid #94c11f;
+      padding: 15px 18px;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .impact-box:hover {
+      transform: translateY(-3px);
+    }
+
+    .impact-box p {
+      margin: 6px 0;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* CTA */
     .cta-block {
-        padding: 0 20px;
-        margin-bottom: 8px;
-        flex-direction: column;
+      margin: 0 40px 10px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 0 10px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .resume-btn {
-        width: 100%;
-        margin: 0;
+      display: inline-block;
+      padding: 12px 18px;
+      background: #94c11f;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      text-align: center;
     }
 
-    section,
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .resume-btn.secondary {
+      background: #333;
+    }
+
+    .resume-btn.linkedin {
+      background: #0a66c2;
+    }
+
+    /* IMPACT SECTION */
     #impact {
-        margin: 16px;
-        padding: 22px;
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
     }
 
+    .impact-strip {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .impact-card {
+      flex: 1 1 220px;
+      background: #f9fafb;
+      padding: 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+      min-width: 0;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      border-left: 4px solid #94c11f;
+      padding-left: 10px;
+      margin-top: 0;
+      color: #1f2937;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    /* TIMELINE */
     .timeline {
-        margin-left: 6px;
-        padding-left: 14px;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 3px solid #94c11f;
     }
 
     .exp-block {
-        padding: 16px;
+      margin-bottom: 30px;
+      padding: 18px 22px;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+      background: #fff;
     }
 
-    .signature {
+    .exp-block:hover {
+      transform: translateY(-3px);
+    }
+
+    .exp-year {
+      font-size: 12px;
+      color: #888;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .exp-role {
+      font-weight: 700;
+      margin: 5px 0;
+      color: #374151;
+    }
+
+    .exp-block h3 {
+      margin: 8px 0 4px;
+      color: #111827;
+    }
+
+    .exp-block ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      line-height: 1.7;
+    }
+
+    #education {
+      min-height: 250px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      nav {
+        justify-content: flex-start;
+        gap: 14px;
+        padding: 12px 12px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 18px 20px;
+        gap: 18px;
+      }
+
+      .photo-frame {
+        width: 130px;
+        height: 130px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .signature {
         font-size: 18px;
-    }
+      }
 
-    .subhook,
-    .contact-line,
-    section p,
-    .exp-block li {
-        font-size: 15px;
-    }
-}
+      .subhook {
+        font-size: 14px;
+      }
 
-/* EXTRA SMALL */
-@media (max-width: 420px) {
-    h1 {
-        font-size: 26px;
-    }
+      .contact-line {
+        font-size: 14px;
+      }
 
-    .signature {
-        font-size: 17px;
-    }
+      .impact-strip {
+        flex-direction: column;
+      }
 
-    section,
-    #impact {
-        margin: 12px;
-        padding: 18px;
+      .cta-block {
+        margin: 0 16px 8px;
+        padding-bottom: 8px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .resume-btn {
+        width: 100%;
+      }
+
+      section,
+      #impact {
+        margin: 14px;
+        padding: 20px;
+      }
+
+      .timeline {
+        margin-left: 8px;
+        padding-left: 14px;
+      }
+
+      .exp-block {
+        padding: 16px;
+      }
     }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="nav-inner">
-        <div class="nav-brand">Janani Balasubramanian</div>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#impact">Impact</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+  </nav>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-            ☰
-        </button>
-
-        <div class="nav-links" id="navLinks">
-            <a href="#summary">Summary</a>
-            <a href="#impact">Impact</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-        </div>
-    </div>
-</nav>
-
-<header>
+  <header>
     <div class="photo-frame">
-        <img src="janani_profile.jpg" alt="Janani Balasubramanian">
+      <img src="janani_profile.jpg" alt="Janani Balasubramanian">
     </div>
 
     <div>
-        <h1>Janani Balasubramanian</h1>
+      <h1>Janani Balasubramanian</h1>
 
-        <div class="signature">
-            HRBP Leader driving hiring strategy, workforce scale & business-aligned people decisions
-        </div>
+      <div class="signature">
+        HRBP Leader driving hiring strategy, workforce scale & business-aligned people decisions
+      </div>
 
-        <div class="subhook">
-            15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
-        </div>
+      <div class="subhook">
+        15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+      </div>
 
-        <div class="impact-box">
-            <p>✔ Leads hiring strategy & execution across business units</p>
-            <p>✔ Manages HRBP delivery supporting leadership & operations</p>
-            <p>✔ Enables workforce scale in high-growth manufacturing environments</p>
-        </div>
+      <div class="impact-box">
+        <p>✔ Leads hiring strategy & execution across business units</p>
+        <p>✔ Manages HRBP delivery supporting leadership & operations</p>
+        <p>✔ Enables workforce scale in high-growth manufacturing environments</p>
+      </div>
 
-        <p class="contact-line">Chennai | beingjanani@gmail.com</p>
+      <div class="contact-line">
+        Chennai | beingjanani@gmail.com
+      </div>
     </div>
-</header>
+  </header>
 
-<div class="cta-block">
-    <a class="resume-btn" href="janani_resume.pdf" target="_blank" rel="noopener noreferrer">Download Professional Profile</a>
-    <a class="resume-btn" href="mailto:beingjanani@gmail.com?subject=Resume%20Request%20-%20Janani%20Balasubramanian&body=Hello%20Janani,%0D%0A%0D%0AI%20would%20like%20to%20request%20your%20full%20resume.%0D%0A%0D%0AName:%20%0D%0ACompany:%20%0D%0ARole:%20%0D%0AReason:%20%0D%0A%0D%0ARegards," style="background:#333;">Request Full Resume</a>
-</div>
+  <div class="cta-block">
+    <div class="cta-buttons">
+      <a class="resume-btn" href="mailto:beingjanani@gmail.com?subject=Request%20for%20Full%20Resume%20-%20Janani%20Balasubramanian">
+        Request Full Resume
+      </a>
 
-<div class="content-wrap">
-    <section id="summary">
-        <h2>Summary</h2>
-        <p>
-            HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
-        </p>
-    </section>
+      <a class="resume-btn secondary" href="mailto:beingjanani@gmail.com">
+        Email
+      </a>
 
-    <section id="impact">
-        <h2>Impact</h2>
+      <!-- Replace # with Janani's actual LinkedIn URL later -->
+      <a class="resume-btn linkedin" href="#" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+    </div>
+  </div>
 
-        <div class="impact-strip">
-            <div class="impact-card">Business HR Partnering</div>
-            <div class="impact-card">Hiring Strategy & Execution</div>
-            <div class="impact-card">Employee Engagement</div>
-            <div class="impact-card">HR Operations Excellence</div>
-        </div>
-    </section>
+  <section id="summary">
+    <h2>Summary</h2>
+    <p>
+      HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
+    </p>
+  </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
+  <section id="impact">
+    <h2>Impact</h2>
 
-        <div class="timeline">
+    <div class="impact-strip">
+      <div class="impact-card">Business HR Partnering</div>
+      <div class="impact-card">Hiring Strategy & Execution</div>
+      <div class="impact-card">Employee Engagement</div>
+      <div class="impact-card">HR Operations Excellence</div>
+    </div>
+  </section>
 
-            <div class="exp-block">
-                <div class="exp-year">Jan 2026 – Present</div>
-                <h3>Ola Electric</h3>
-                <div class="exp-role">Manager HR (HRBP)</div>
-                <ul>
-                    <li>Partnering with leadership to align HR strategy with business growth</li>
-                    <li>Driving hiring and workforce planning for key roles</li>
-                    <li>Leading engagement and retention initiatives</li>
-                </ul>
-            </div>
+  <section id="experience">
+    <h2>Experience</h2>
 
-            <div class="exp-block">
-                <div class="exp-year">Mar 2020 – Dec 2025</div>
-                <h3>Salcomp</h3>
-                <div class="exp-role">Deputy Manager (HRBP)</div>
-                <ul>
-                    <li>Collaborated with leadership on workforce and expansion planning</li>
-                    <li>Led hiring delivery across multiple functions</li>
-                    <li>Improved HR alignment with business needs</li>
-                </ul>
-            </div>
+    <div class="timeline">
 
-            <div class="exp-block">
-                <div class="exp-year">Aug 2012 – Feb 2020</div>
-                <h3>Nokia</h3>
-                <div class="exp-role">HR Senior Executive</div>
-                <ul>
-                    <li>Handled employee engagement and HR operations</li>
-                    <li>Supported performance management processes</li>
-                    <li>Worked within global HR frameworks</li>
-                </ul>
-            </div>
+      <div class="exp-block">
+        <div class="exp-year">Jan 2026 – Present</div>
+        <h3>Ola Electric</h3>
+        <div class="exp-role">Manager HR (HRBP)</div>
+        <ul>
+          <li>Partnering with leadership to align HR strategy with business growth</li>
+          <li>Driving hiring and workforce planning for key roles</li>
+          <li>Leading engagement and retention initiatives</li>
+        </ul>
+      </div>
 
-            <div class="exp-block">
-                <div class="exp-year">Jul 2008 – Mar 2011</div>
-                <h3>Arrant HR</h3>
-                <div class="exp-role">HR Senior Executive</div>
-                <ul>
-                    <li>Managed recruitment lifecycle and HR operations</li>
-                    <li>Handled payroll and coordination activities</li>
-                    <li>Supported HR process implementation</li>
-                </ul>
-            </div>
+      <div class="exp-block">
+        <div class="exp-year">Mar 2020 – Dec 2025</div>
+        <h3>Salcomp</h3>
+        <div class="exp-role">Deputy Manager (HRBP)</div>
+        <ul>
+          <li>Collaborated with leadership on workforce and expansion planning</li>
+          <li>Led hiring delivery across multiple functions</li>
+          <li>Improved HR alignment with business needs</li>
+        </ul>
+      </div>
 
-        </div>
-    </section>
+      <div class="exp-block">
+        <div class="exp-year">Aug 2012 – Feb 2020</div>
+        <h3>Nokia</h3>
+        <div class="exp-role">HR Senior Executive</div>
+        <ul>
+          <li>Handled employee engagement and HR operations</li>
+          <li>Supported performance management processes</li>
+          <li>Worked within global HR frameworks</li>
+        </ul>
+      </div>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>
-            HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
-        </p>
-    </section>
+      <div class="exp-block">
+        <div class="exp-year">Jul 2008 – Mar 2011</div>
+        <h3>Arrant HR</h3>
+        <div class="exp-role">HR Senior Executive</div>
+        <ul>
+          <li>Managed recruitment lifecycle and HR operations</li>
+          <li>Handled payroll and coordination activities</li>
+          <li>Supported HR process implementation</li>
+        </ul>
+      </div>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p><b>PGDHRM</b> – 2011 | Alagappa University</p>
-        <p><b>MSW</b> – 2008 | Cauvery College</p>
-        <p><b>BSW</b> – 2006 | Cauvery College</p>
-    </section>
-</div>
+    </div>
+  </section>
 
-<script>
-/* =========================
-   CHROME-SAFE TOP LOAD FIX
-========================= */
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>
+      HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
+    </p>
+  </section>
 
-/* Prevent browser from restoring previous scroll position */
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
+  <section id="education">
+    <h2>Education</h2>
+    <p><b>PGDHRM</b> – 2011 | Alagappa University</p>
+    <p><b>MSW</b> – 2008 | Cauvery College</p>
+    <p><b>BSW</b> – 2006 | Cauvery College</p>
+  </section>
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-const navToggle = document.getElementById("navToggle");
-const navLinksWrap = document.getElementById("navLinks");
+  <script>
+    /* Prevent browser from restoring previous scroll position */
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
 
-/* Force top immediately */
-window.scrollTo(0, 0);
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
 
-/* Force top on DOM ready */
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        window.scrollTo(0, 0);
-        updatePageState();
-    }, 0);
-});
-
-/* Force top again after full load */
-window.addEventListener("load", function () {
-    setTimeout(function () {
-        window.scrollTo(0, 0);
-        updatePageState();
-    }, 80);
-});
-
-/* Force top when page is restored from cache (Chrome/back-forward cache) */
-window.addEventListener("pageshow", function () {
-    setTimeout(function () {
-        window.scrollTo(0, 0);
-        updatePageState();
-    }, 80);
-});
-
-/* Mobile menu toggle */
-if (navToggle && navLinksWrap) {
-    navToggle.addEventListener("click", function () {
-        const isOpen = navLinksWrap.classList.toggle("open");
-        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        navToggle.textContent = isOpen ? "✕" : "☰";
-    });
-}
-
-/* Smooth scroll ONLY for nav clicks */
-navLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
+    /* Smooth scroll ONLY for nav clicks */
+    navLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
         e.preventDefault();
 
         const targetId = this.getAttribute("href");
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
         }
-
-        /* Close mobile menu after click */
-        if (window.innerWidth <= 700 && navLinksWrap.classList.contains("open")) {
-            navLinksWrap.classList.remove("open");
-            navToggle.setAttribute("aria-expanded", "false");
-            navToggle.textContent = "☰";
-        }
+      });
     });
-});
 
-/* Reveal sections + active nav */
-function updatePageState() {
-    let current = "summary";
-
-    sections.forEach(sec => {
-        const top = sec.offsetTop - 140;
-
-        if (window.scrollY >= top) {
-            current = sec.id;
-        }
-
+    function revealVisibleSections() {
+      sections.forEach(sec => {
         const rect = sec.getBoundingClientRect();
         if (rect.top < window.innerHeight - 50) {
-            sec.classList.add("visible");
+          sec.classList.add("visible");
         }
-    });
+      });
 
-    /* Always make first section visible immediately */
-    const firstSection = document.getElementById("summary");
-    if (firstSection) {
+      const firstSection = document.getElementById("summary");
+      if (firstSection) {
         firstSection.classList.add("visible");
+      }
     }
 
-    /* Fix last section active state */
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+    function updateActiveNav() {
+      let current = "summary";
+
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) {
+          current = sec.id;
+        }
+      });
+
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
         current = "education";
-    }
+      }
 
-    navLinks.forEach(link => {
+      navLinks.forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
+          link.classList.add("active");
         }
-    });
-}
-
-window.addEventListener("scroll", updatePageState);
-window.addEventListener("resize", function () {
-    updatePageState();
-
-    /* Reset menu if switching to desktop */
-    if (window.innerWidth > 700 && navLinksWrap.classList.contains("open")) {
-        navLinksWrap.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.textContent = "☰";
+      });
     }
-});
-</script>
+
+    function updatePageState() {
+      revealVisibleSections();
+      updateActiveNav();
+    }
+
+    /* Top-load fix */
+    window.addEventListener("load", function () {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        updatePageState();
+      }, 50);
+    });
+
+    window.addEventListener("pageshow", function () {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        updatePageState();
+      }, 50);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updatePageState();
+    });
+
+    window.addEventListener("scroll", updatePageState);
+    window.addEventListener("resize", updatePageState);
+  </script>
 
 </body>
 </html>
