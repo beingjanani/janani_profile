@@ -10,8 +10,6 @@
 
 <style>
 
-html { scroll-behavior: smooth; }
-
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -60,6 +58,7 @@ header {
     border-radius: 16px;
     overflow: hidden;
     border: 4px solid #94c11f;
+    flex-shrink: 0;
 }
 
 .photo-frame img {
@@ -69,7 +68,10 @@ header {
     object-position: top center;
 }
 
-h1 { margin: 0; font-family: 'Montserrat'; }
+h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
 
 .signature {
     font-size: 22px;
@@ -104,7 +106,9 @@ h1 { margin: 0; font-family: 'Montserrat'; }
 }
 
 /* CTA */
-.cta-block { margin: 0 40px; }
+.cta-block {
+    margin: 0 40px;
+}
 
 .resume-btn {
     display: inline-block;
@@ -206,7 +210,9 @@ h2 {
     padding-left: 18px;
 }
 
-#education { min-height: 250px; }
+#education {
+    min-height: 250px;
+}
 
 @media(max-width:700px){
     nav {
@@ -215,13 +221,19 @@ h2 {
         flex-wrap: wrap;
     }
 
+    nav a {
+        font-size: 14px;
+    }
+
     header {
         flex-direction: column;
         text-align: center;
         padding: 35px 20px;
     }
 
-    .impact-strip { flex-direction: column; }
+    .impact-strip {
+        flex-direction: column;
+    }
 
     .cta-block {
         margin: 0 20px;
@@ -231,6 +243,12 @@ h2 {
     .resume-btn {
         margin-bottom: 10px;
     }
+
+    section,
+    #impact {
+        margin: 16px;
+        padding: 22px;
+    }
 }
 
 </style>
@@ -239,151 +257,186 @@ h2 {
 <body>
 
 <nav>
-<a href="#summary">Summary</a>
-<a href="#impact">Impact</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
-<a href="#education">Education</a>
+    <a href="#summary">Summary</a>
+    <a href="#impact">Impact</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
 </nav>
 
 <header>
-<div class="photo-frame">
-<img src="janani_profile.jpg" alt="Janani Balasubramanian">
-</div>
+    <div class="photo-frame">
+        <img src="janani_profile.jpg" alt="Janani Balasubramanian">
+    </div>
 
-<div>
-<h1>Janani Balasubramanian</h1>
+    <div>
+        <h1>Janani Balasubramanian</h1>
 
-<div class="signature">
-HRBP Leader driving hiring strategy, workforce scale & business-aligned people decisions
-</div>
+        <div class="signature">
+            HRBP Leader driving hiring strategy, workforce scale & business-aligned people decisions
+        </div>
 
-<div class="subhook">
-15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
-</div>
+        <div class="subhook">
+            15+ Years • Ola Electric • Ex-Salcomp • Ex-Nokia
+        </div>
 
-<div class="impact-box">
-<p>✔ Leads hiring strategy & execution across business units</p>
-<p>✔ Manages HRBP delivery supporting leadership & operations</p>
-<p>✔ Enables workforce scale in high-growth manufacturing environments</p>
-</div>
+        <div class="impact-box">
+            <p>✔ Leads hiring strategy & execution across business units</p>
+            <p>✔ Manages HRBP delivery supporting leadership & operations</p>
+            <p>✔ Enables workforce scale in high-growth manufacturing environments</p>
+        </div>
 
-<p>Chennai | beingjanani@gmail.com</p>
-</div>
+        <p>Chennai | beingjanani@gmail.com</p>
+    </div>
 </header>
 
 <div class="cta-block">
-<a class="resume-btn" href="janani_resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-<a class="resume-btn" href="mailto:beingjanani@gmail.com" style="background:#333;">Email</a>
+    <a class="resume-btn" href="janani_resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
+    <a class="resume-btn" href="mailto:beingjanani@gmail.com" style="background:#333;">Email</a>
 </div>
 
 <section id="summary">
-<h2>Summary</h2>
-<p>
-HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
-</p>
+    <h2>Summary</h2>
+    <p>
+        HR professional with 15+ years of experience partnering with business leaders to drive workforce strategy, hiring, and employee engagement.
+    </p>
 </section>
 
 <section id="impact">
-<h2>Impact</h2>
+    <h2>Impact</h2>
 
-<div class="impact-strip">
-<div class="impact-card">Business HR Partnering</div>
-<div class="impact-card">Hiring Strategy & Execution</div>
-<div class="impact-card">Employee Engagement</div>
-<div class="impact-card">HR Operations Excellence</div>
-</div>
-
+    <div class="impact-strip">
+        <div class="impact-card">Business HR Partnering</div>
+        <div class="impact-card">Hiring Strategy & Execution</div>
+        <div class="impact-card">Employee Engagement</div>
+        <div class="impact-card">HR Operations Excellence</div>
+    </div>
 </section>
 
 <section id="experience">
-<h2>Experience</h2>
+    <h2>Experience</h2>
 
-<div class="timeline">
+    <div class="timeline">
 
-<div class="exp-block">
-<div class="exp-year">Jan 2026 – Present</div>
-<h3>Ola Electric</h3>
-<div class="exp-role">Manager HR (HRBP)</div>
-<ul>
-<li>Partnering with leadership to align HR strategy with business growth</li>
-<li>Driving hiring and workforce planning for key roles</li>
-<li>Leading engagement and retention initiatives</li>
-</ul>
-</div>
+        <div class="exp-block">
+            <div class="exp-year">Jan 2026 – Present</div>
+            <h3>Ola Electric</h3>
+            <div class="exp-role">Manager HR (HRBP)</div>
+            <ul>
+                <li>Partnering with leadership to align HR strategy with business growth</li>
+                <li>Driving hiring and workforce planning for key roles</li>
+                <li>Leading engagement and retention initiatives</li>
+            </ul>
+        </div>
 
-<div class="exp-block">
-<div class="exp-year">Mar 2020 – Dec 2025</div>
-<h3>Salcomp</h3>
-<div class="exp-role">Deputy Manager (HRBP)</div>
-<ul>
-<li>Collaborated with leadership on workforce and expansion planning</li>
-<li>Led hiring delivery across multiple functions</li>
-<li>Improved HR alignment with business needs</li>
-</ul>
-</div>
+        <div class="exp-block">
+            <div class="exp-year">Mar 2020 – Dec 2025</div>
+            <h3>Salcomp</h3>
+            <div class="exp-role">Deputy Manager (HRBP)</div>
+            <ul>
+                <li>Collaborated with leadership on workforce and expansion planning</li>
+                <li>Led hiring delivery across multiple functions</li>
+                <li>Improved HR alignment with business needs</li>
+            </ul>
+        </div>
 
-<div class="exp-block">
-<div class="exp-year">Aug 2012 – Feb 2020</div>
-<h3>Nokia</h3>
-<div class="exp-role">HR Senior Executive</div>
-<ul>
-<li>Handled employee engagement and HR operations</li>
-<li>Supported performance management processes</li>
-<li>Worked within global HR frameworks</li>
-</ul>
-</div>
+        <div class="exp-block">
+            <div class="exp-year">Aug 2012 – Feb 2020</div>
+            <h3>Nokia</h3>
+            <div class="exp-role">HR Senior Executive</div>
+            <ul>
+                <li>Handled employee engagement and HR operations</li>
+                <li>Supported performance management processes</li>
+                <li>Worked within global HR frameworks</li>
+            </ul>
+        </div>
 
-<div class="exp-block">
-<div class="exp-year">Jul 2008 – Mar 2011</div>
-<h3>Arrant HR</h3>
-<div class="exp-role">HR Senior Executive</div>
-<ul>
-<li>Managed recruitment lifecycle and HR operations</li>
-<li>Handled payroll and coordination activities</li>
-<li>Supported HR process implementation</li>
-</ul>
-</div>
+        <div class="exp-block">
+            <div class="exp-year">Jul 2008 – Mar 2011</div>
+            <h3>Arrant HR</h3>
+            <div class="exp-role">HR Senior Executive</div>
+            <ul>
+                <li>Managed recruitment lifecycle and HR operations</li>
+                <li>Handled payroll and coordination activities</li>
+                <li>Supported HR process implementation</li>
+            </ul>
+        </div>
 
-</div>
-
+    </div>
 </section>
 
 <section id="skills">
-<h2>Skills</h2>
-<p>
-HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
-</p>
+    <h2>Skills</h2>
+    <p>
+        HRBP • Talent Acquisition • Workforce Planning • Employee Engagement • HR Operations • Compliance
+    </p>
 </section>
 
 <section id="education">
-<h2>Education</h2>
-<p><b>PGDHRM</b> – 2011 | Alagappa University</p>
-<p><b>MSW</b> – 2008 | Cauvery College</p>
-<p><b>BSW</b> – 2006 | Cauvery College</p>
+    <h2>Education</h2>
+    <p><b>PGDHRM</b> – 2011 | Alagappa University</p>
+    <p><b>MSW</b> – 2008 | Cauvery College</p>
+    <p><b>BSW</b> – 2006 | Cauvery College</p>
 </section>
 
 <script>
-/* FORCE PAGE LOAD AT TOP - RELIABLE FIX */
+/* =========================
+   CHROME-SAFE TOP LOAD FIX
+========================= */
+
+/* Prevent browser from restoring previous scroll position */
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-/* If page loads with a hash, remove it so browser doesn't jump to a section */
-if (window.location.hash) {
-    history.replaceState(null, null, window.location.pathname + window.location.search);
-}
-
-window.addEventListener('pageshow', function () {
-    setTimeout(function () {
-        window.scrollTo(0, 0);
-    }, 0);
-});
-
-/* NAV ACTIVE + REVEAL */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
+/* Force top immediately */
+window.scrollTo(0, 0);
+
+/* Force top on DOM ready */
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+        updatePageState();
+    }, 0);
+});
+
+/* Force top again after full load */
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+        updatePageState();
+    }, 80);
+});
+
+/* Force top when page is restored from cache (Chrome/back-forward cache) */
+window.addEventListener("pageshow", function () {
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+        updatePageState();
+    }, 80);
+});
+
+/* Smooth scroll ONLY for nav clicks */
+navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+});
+
+/* Reveal sections + active nav */
 function updatePageState() {
     let current = "summary";
 
@@ -394,20 +447,19 @@ function updatePageState() {
             current = sec.id;
         }
 
-        /* reveal */
         const rect = sec.getBoundingClientRect();
         if (rect.top < window.innerHeight - 50) {
             sec.classList.add("visible");
         }
     });
 
-    /* ensure first section visible on load */
+    /* Always make first section visible immediately */
     const firstSection = document.getElementById("summary");
     if (firstSection) {
         firstSection.classList.add("visible");
     }
 
-    /* fix last section active state */
+    /* Fix last section active state */
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
         current = "education";
     }
@@ -421,9 +473,7 @@ function updatePageState() {
 }
 
 window.addEventListener("scroll", updatePageState);
-window.addEventListener("load", updatePageState);
 window.addEventListener("resize", updatePageState);
-document.addEventListener("DOMContentLoaded", updatePageState);
 </script>
 
 </body>
